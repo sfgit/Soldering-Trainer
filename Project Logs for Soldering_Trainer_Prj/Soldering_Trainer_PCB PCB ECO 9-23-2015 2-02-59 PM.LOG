@@ -1,0 +1,19 @@
+Added Component: Designator=PWR2(JMP1X2)
+Added Component: Designator=PWR3(JMP1X2)
+Added Component: Designator=PWR4(JMP1X2)
+Added Component: Designator=PWR5(JMP1X2)
+Added Pin To Net: NetName=GND Pin=PWR2-1
+Added Pin To Net: NetName=GND Pin=PWR2-2
+Added Pin To Net: NetName=GND Pin=PWR3-1
+Added Pin To Net: NetName=GND Pin=PWR3-2
+Added Pin To Net: NetName=3V3 Pin=PWR4-1
+Added Pin To Net: NetName=3V3 Pin=PWR4-2
+Added Pin To Net: NetName=3V3 Pin=PWR5-1
+Added Pin To Net: NetName=3V3 Pin=PWR5-2
+Added Net: Name=3V3
+Added Member To Class: ClassName=Devices Member=Component PWR2 Jumper
+Added Member To Class: ClassName=Devices Member=Component PWR3 Jumper
+Added Member To Class: ClassName=Devices Member=Component PWR4 Jumper
+Added Member To Class: ClassName=Devices Member=Component PWR5 Jumper
+Added Member To Class: ClassName=Devices Member=Component U1 LM1117T-5.0
+Added Room: Name=Devices

@@ -1,0 +1,44 @@
+Removed Member From Class: ClassName=U_BGA LEDs A Member=R17
+Removed Member From Class: ClassName=U_BGA LEDs B Member=R17
+Removed Member From Class: ClassName=U_BGA LEDs B Member=R18
+Removed Member From Class: ClassName=U_BGA LEDs B Member=R19
+Removed Member From Class: ClassName=U_BGA LEDs B Member=R20
+Added Pin To Net: NetName=GND Pin=LED17-2
+Added Pin To Net: NetName=GND Pin=LED18-2
+Added Pin To Net: NetName=GND Pin=LED19-2
+Added Pin To Net: NetName=GND Pin=LED20-2
+Added Pin To Net: NetName=GND Pin=P7-A4
+Added Pin To Net: NetName=GND Pin=P7-A5
+Added Pin To Net: NetName=GND Pin=P7-A6
+Added Pin To Net: NetName=GND Pin=P7-A7
+Added Pin To Net: NetName=LED_C1 Pin=P7-J1
+Added Pin To Net: NetName=LED_C1 Pin=R17-2
+Added Net: Name=LED_C1
+Added Pin To Net: NetName=LED_C2 Pin=P7-J2
+Added Pin To Net: NetName=LED_C2 Pin=R18-2
+Added Net: Name=LED_C2
+Added Pin To Net: NetName=LED_C3 Pin=P7-J3
+Added Pin To Net: NetName=LED_C3 Pin=R19-2
+Added Net: Name=LED_C3
+Added Pin To Net: NetName=LED_C4 Pin=P7-J4
+Added Pin To Net: NetName=LED_C4 Pin=R20-2
+Added Net: Name=LED_C4
+Added Pin To Net: NetName=NetLED17_1 Pin=LED17-1
+Added Pin To Net: NetName=NetLED17_1 Pin=R17-1
+Added Net: Name=NetLED17_1
+Added Pin To Net: NetName=NetLED18_1 Pin=LED18-1
+Added Pin To Net: NetName=NetLED18_1 Pin=R18-1
+Added Net: Name=NetLED18_1
+Added Pin To Net: NetName=NetLED19_1 Pin=LED19-1
+Added Pin To Net: NetName=NetLED19_1 Pin=R19-1
+Added Net: Name=NetLED19_1
+Added Pin To Net: NetName=NetLED20_1 Pin=LED20-1
+Added Pin To Net: NetName=NetLED20_1 Pin=R20-1
+Added Net: Name=NetLED20_1
+Added Class: Name=U_BGA LEDs C
+Added Member To Class: ClassName=Devices Member=Component C5 AP 100uF 6.3V 1206(3216)
+Added Member To Class: ClassName=U_BGA LEDs A Member=Component R12 0805
+Added Member To Class: ClassName=U_BGA LEDs B Member=Component R13 0805
+Added Member To Class: ClassName=U_BGA LEDs B Member=Component R14 0805
+Added Member To Class: ClassName=U_BGA LEDs B Member=Component R15 0805
+Added Member To Class: ClassName=U_BGA LEDs B Member=Component R16 0805

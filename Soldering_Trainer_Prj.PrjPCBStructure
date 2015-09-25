@@ -1,0 +1,5 @@
+Record=SheetSymbol|SourceDocument=Devices.SchDoc|Designator=U_BGA Modules|SchDesignator=U_BGA Modules|FileName=BGA Modules.SchDoc|SymbolType=Normal|RawFileName=BGA Modules.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=BGA Modules.SchDoc|Designator=U_BGA LEDs A|SchDesignator=U_BGA LEDs A|FileName=BGA LEDs A.SchDoc|SymbolType=Normal|RawFileName=BGA LEDs A.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=BGA Modules.SchDoc|Designator=U_BGA LEDs B|SchDesignator=U_BGA LEDs B|FileName=BGA LEDs B.SchDoc|SymbolType=Normal|RawFileName=BGA LEDs B.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=BGA Modules.SchDoc|Designator=U_BGA LEDs C|SchDesignator=U_BGA LEDs C|FileName=BGA LEDs C.SchDoc|SymbolType=Normal|RawFileName=BGA LEDs C.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=TopLevelDocument|FileName=Devices.SchDoc

@@ -1,0 +1,5 @@
+Added Component: Designator=J4(KLD-0202)
+Added Pin To Net: NetName=NetF1_2 Pin=J4-1
+Added Pin To Net: NetName=GND Pin=J4-2
+Added Pin To Net: NetName=GND Pin=J4-3
+Added Member To Class: ClassName=Devices Member=Component J4 PWR CONNECTOR

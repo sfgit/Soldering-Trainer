@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: Soldering_Trainer_PCB.PcbDoc   9/25/2015  8:43:26 AM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Soldering_Trainer_PCB-RoundHoles.TXT
+ASCII SlotHoles File : Soldering_Trainer_PCB-SlotHoles.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        10mil (0.254mm)          Round          24               2.22 Inch (56.44 mm)
+T2        28mil (0.7112mm)         Slot           2                283.62 Inch (7203.96 mm)
+T3        35mil (0.889mm)          Round          43               10.19 Inch (258.88 mm)
+T4        36mil (0.9144mm)         Round          10               3.20 Inch (81.31 mm)
+T5        39mil (0.9906mm)         Round          6                1.50 Inch (38.22 mm)
+T6        43mil (1.0922mm)         Round          24               3.70 Inch (93.98 mm)
+T7        61mil (1.5494mm)         Round          2                0.53 Inch (13.49 mm)
+T8        71mil (1.8034mm)         Round          3                0.48 Inch (12.14 mm)
+---------------------------------------------------------------------------
+Totals                                            114              305.45 Inch (7758.40 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

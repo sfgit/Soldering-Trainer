@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=5V0_USB Pin=C5-1
+Removed Pin From Net: NetName=GND Pin=C5-2
+Added Component: Designator=C5(CAPC1206(3216)190_L)
+Added Pin To Net: NetName=5V0_USB Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=LED_A3 Pin=P5-J3
+Added Member To Class: ClassName=Devices Member=Component C5 AP 100uF 6.3V 1206(3216)

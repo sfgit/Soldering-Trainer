@@ -1,0 +1,33 @@
+Removed Pin From Net: NetName=NetJ1_3 Pin=R3-2
+Removed Pin From Net: NetName=NetJ1_4 Pin=R4-2
+Removed Pin From Net: NetName=NetJ1_5 Pin=R5-2
+Removed Pin From Net: NetName=NetJ1_6 Pin=R6-2
+Removed Pin From Net: NetName=NetJ1_7 Pin=R7-2
+Removed Pin From Net: NetName=NetJ1_8 Pin=R8-2
+Change Component DesignItemId : Designator=P3 Old DesignItemId=Header 4 New DesignItemId=Header 12
+Change Component DesignItemId : Designator=J1 Old DesignItemId=Header 8 New DesignItemId=Header 12
+Change Component Footprint: Designator=P3 Old Footprint=HDR1X4 New Footprint=HDR1X12
+Change Component Footprint: Designator=J1 Old Footprint=HDR1X8 New Footprint=HDR1X12
+Change Component Comment : Designator=P3 Old Comment=Header 4 New Comment=Header 12
+Change Component Comment : Designator=J1 Old Comment=Header 8 New Comment=Header 12
+Added Pin To Net: NetName=GND Pin=P3-5
+Added Pin To Net: NetName=GND Pin=P3-6
+Added Pin To Net: NetName=GND Pin=P3-7
+Added Pin To Net: NetName=GND Pin=P3-8
+Added Pin To Net: NetName=GND Pin=P3-9
+Added Pin To Net: NetName=GND Pin=P3-10
+Added Pin To Net: NetName=GND Pin=P3-11
+Added Pin To Net: NetName=GND Pin=P3-12
+Added Pin To Net: NetName=NetJ1_3 Pin=R1-2
+Added Pin To Net: NetName=NetJ1_4 Pin=R2-2
+Added Pin To Net: NetName=NetJ1_5 Pin=R3-2
+Added Pin To Net: NetName=NetJ1_6 Pin=R4-2
+Added Pin To Net: NetName=NetJ1_7 Pin=R5-2
+Added Pin To Net: NetName=NetJ1_8 Pin=R6-2
+Added Pin To Net: NetName=NetJ1_9 Pin=J1-9
+Added Pin To Net: NetName=NetJ1_9 Pin=R7-2
+Added Net: Name=NetJ1_9
+Added Pin To Net: NetName=NetJ1_10 Pin=J1-10
+Added Pin To Net: NetName=NetJ1_10 Pin=R8-2
+Added Net: Name=NetJ1_10
+Added Room: Name=Devices

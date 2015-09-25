@@ -1,0 +1,25 @@
+Added Component: Designator=C5(CAPC1206(3216)190_L)
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=5V0 Pin=C5-2
+Added Net: Name=5V0
+Added Net: Name=ALT_DONE
+Added Net: Name=ALT_DONEX
+Added Net: Name=ARD_D0(RX)
+Added Net: Name=ARD_D0(RX)X
+Added Net: Name=ARD_D1(TX)
+Added Net: Name=ARD_D1(TX)X
+Added Net: Name=ARD_D7
+Added Net: Name=ARD_D7X
+Added Net: Name=DONE_ARD
+Added Net: Name=DONE_ARDX
+Added Net: Name=MISO_ARD
+Added Net: Name=MISO_ARDX
+Added Net: Name=MOSI_ARD
+Added Net: Name=MOSI_ARDX
+Added Net: Name=MUX_SEL
+Added Net: Name=MUX_SELX
+Added Net: Name=PROGRAM_B
+Added Net: Name=PROGRAM_BX
+Added Net: Name=SCLK_ARD
+Added Net: Name=SCLK_ARDX
+Added Member To Class: ClassName=Devices Member=Component C5 AP 100uF 6.3V 1206(3216)

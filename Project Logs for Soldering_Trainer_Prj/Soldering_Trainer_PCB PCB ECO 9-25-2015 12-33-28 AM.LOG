@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=5V0_USB Pin=C5-1
+Removed Pin From Net: NetName=GND Pin=C5-2
+Change Component Comment : Designator=R17 Old Comment=1206 New Comment=0805
+Change Component Comment : Designator=R18 Old Comment=1206 New Comment=0805
+Change Component Comment : Designator=R19 Old Comment=1206 New Comment=0805
+Change Component Comment : Designator=R20 Old Comment=1206 New Comment=0805
+Change Component Designator: OldDesignator=LED17 NewDesignator=LED13
+Change Component Designator: OldDesignator=LED18 NewDesignator=LED14
+Change Component Designator: OldDesignator=LED19 NewDesignator=LED15
+Change Component Designator: OldDesignator=LED20 NewDesignator=LED16
+Change Component Designator: OldDesignator=R17 NewDesignator=R13
+Change Component Designator: OldDesignator=R18 NewDesignator=R14
+Change Component Designator: OldDesignator=R19 NewDesignator=R15
+Change Component Designator: OldDesignator=R20 NewDesignator=R16
+Change Net Name : Old Net Name=NetLED17_1 New Net Name=NetLED13_1
+Change Net Name : Old Net Name=NetLED18_1 New Net Name=NetLED14_1
+Change Net Name : Old Net Name=NetLED19_1 New Net Name=NetLED15_1
+Change Net Name : Old Net Name=NetLED20_1 New Net Name=NetLED16_1

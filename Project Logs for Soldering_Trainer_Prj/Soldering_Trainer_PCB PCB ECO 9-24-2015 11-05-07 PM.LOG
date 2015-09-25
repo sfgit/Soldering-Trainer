@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=5V0_USB Pin=C5-1
+Removed Pin From Net: NetName=GND Pin=C5-2
+Removed Pin From Net: NetName=NetP4_24 Pin=P4_LAND1-A4
+Removed Pin From Net: NetName=NetP4_22 Pin=P4_LAND1-A6
+Removed Pin From Net: NetName=NetP4_21 Pin=P4_LAND1-A7
+Removed Pin From Net: NetName=NetP4_1 Pin=P4_LAND1-J1
+Removed Pin From Net: NetName=NetP4_2 Pin=P4_LAND1-J2
+Removed Pin From Net: NetName=NetP4_3 Pin=P4_LAND1-J3
+Removed Pin From Net: NetName=NetP4_4 Pin=P4_LAND1-J4
+Removed Pin From Net: NetName=NetP4_5 Pin=P4_LAND1-J5
+Removed Pin From Net: NetName=NetP4_6 Pin=P4_LAND1-J6
+Removed Pin From Net: NetName=NetP4_7 Pin=P4_LAND1-J7
+Removed Pin From Net: NetName=NetP4_8 Pin=P4_LAND1-J8
+Added Component: Designator=C5(CAPC1206(3216)190_L)
+Added Pin To Net: NetName=5V0_USB Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=NetP4_21 Pin=P4_LAND1-A3
+Added Pin To Net: NetName=NetP4_22 Pin=P4_LAND1-A4
+Added Pin To Net: NetName=NetP4_24 Pin=P4_LAND1-A6
+Added Pin To Net: NetName=NetP4_8 Pin=P4_LAND1-J1
+Added Pin To Net: NetName=NetP4_7 Pin=P4_LAND1-J2
+Added Pin To Net: NetName=NetP4_6 Pin=P4_LAND1-J3
+Added Pin To Net: NetName=NetP4_5 Pin=P4_LAND1-J4
+Added Pin To Net: NetName=NetP4_4 Pin=P4_LAND1-J5
+Added Pin To Net: NetName=NetP4_3 Pin=P4_LAND1-J6
+Added Pin To Net: NetName=NetP4_2 Pin=P4_LAND1-J7
+Added Pin To Net: NetName=NetP4_1 Pin=P4_LAND1-J8
+Added Member To Class: ClassName=Devices Member=Component C5 AP 100uF 6.3V 1206(3216)
+Added Member To Class: ClassName=Devices Member=Component U1 SN74CBTD3384CPWR

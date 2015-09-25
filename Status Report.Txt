@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [FitCheck.PcbDoc]
+   Generated File[FitCheck-RoundHoles.TXT]
+   Generated File[FitCheck-SlotHoles.TXT]
+   Generated File[FitCheck.LDP]
+   Generated File[FitCheck.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 11:45:41 AM On 9/24/2015

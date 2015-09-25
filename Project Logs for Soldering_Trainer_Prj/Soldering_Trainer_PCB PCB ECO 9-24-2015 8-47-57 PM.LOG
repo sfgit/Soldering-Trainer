@@ -1,0 +1,49 @@
+Change Component Footprint: Designator=R1 Old Footprint=RESC0805(2012)70_L New Footprint=RESC1206(3216)75_L
+Change Component Footprint: Designator=R2 Old Footprint=RESC0805(2012)70_L New Footprint=RESC1206(3216)75_L
+Change Component Footprint: Designator=R3 Old Footprint=RESC0805(2012)70_L New Footprint=RESC1206(3216)75_L
+Change Component Footprint: Designator=R4 Old Footprint=RESC0805(2012)70_L New Footprint=RESC1206(3216)75_L
+Change Component Footprint: Designator=R5 Old Footprint=RESC0805(2012)70_L New Footprint=RESC1206(3216)75_L
+Change Component Footprint: Designator=R6 Old Footprint=RESC0805(2012)70_L New Footprint=RESC1206(3216)75_L
+Change Component Footprint: Designator=R7 Old Footprint=RESC0805(2012)70_L New Footprint=RESC1206(3216)75_L
+Change Component Footprint: Designator=R8 Old Footprint=RESC0805(2012)70_L New Footprint=RESC1206(3216)75_L
+Change Component Comment : Designator=R1 Old Comment=0805 New Comment=1206
+Change Component Comment : Designator=R2 Old Comment=0805 New Comment=1206
+Change Component Comment : Designator=R3 Old Comment=0805 New Comment=1206
+Change Component Comment : Designator=R4 Old Comment=0805 New Comment=1206
+Change Component Comment : Designator=R5 Old Comment=0805 New Comment=1206
+Change Component Comment : Designator=R6 Old Comment=0805 New Comment=1206
+Change Component Comment : Designator=R7 Old Comment=0805 New Comment=1206
+Change Component Comment : Designator=R8 Old Comment=0805 New Comment=1206
+Added Component: Designator=C5(CAPC1206(3216)190_L)
+Added Component: Designator=U8(TSOP65P620X120-24N)
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=5V0 Pin=C5-2
+Added Pin To Net: NetName=GND Pin=U8-1
+Added Pin To Net: NetName=MOSI_ARDX Pin=U8-2
+Added Pin To Net: NetName=MOSI_ARD Pin=U8-3
+Added Pin To Net: NetName=MISO_ARD Pin=U8-4
+Added Pin To Net: NetName=MISO_ARDX Pin=U8-5
+Added Pin To Net: NetName=SCLK_ARDX Pin=U8-6
+Added Pin To Net: NetName=SCLK_ARD Pin=U8-7
+Added Pin To Net: NetName=ARD_D1(TX) Pin=U8-8
+Added Pin To Net: NetName=ARD_D1(TX)X Pin=U8-9
+Added Pin To Net: NetName=ARD_D0(RX)X Pin=U8-10
+Added Pin To Net: NetName=ARD_D0(RX) Pin=U8-11
+Added Pin To Net: NetName=GND Pin=U8-12
+Added Pin To Net: NetName=GND Pin=U8-13
+Added Pin To Net: NetName=MUX_SEL Pin=U8-14
+Added Pin To Net: NetName=MUX_SELX Pin=U8-15
+Added Pin To Net: NetName=PROGRAM_BX Pin=U8-16
+Added Pin To Net: NetName=PROGRAM_B Pin=U8-17
+Added Pin To Net: NetName=ARD_D7 Pin=U8-18
+Added Pin To Net: NetName=ARD_D7X Pin=U8-19
+Added Pin To Net: NetName=DONE_ARDX Pin=U8-20
+Added Pin To Net: NetName=DONE_ARD Pin=U8-21
+Added Pin To Net: NetName=ALT_DONE Pin=U8-22
+Added Pin To Net: NetName=ALT_DONEX Pin=U8-23
+Added Pin To Net: NetName=5V0 Pin=U8-24
+Added Member To Class: ClassName=Devices Member=Component C5 AP 100uF 6.3V 1206(3216)
+Added Member To Class: ClassName=Devices Member=Component P4 MODCMP-P056-M10X10
+Added Member To Class: ClassName=Devices Member=Component P5 MODCMP-P056-M10X10
+Added Member To Class: ClassName=Devices Member=Component P6 MODCMP-P056-M10X10
+Added Member To Class: ClassName=Devices Member=Component U8 SN74CBTD3384CPWR

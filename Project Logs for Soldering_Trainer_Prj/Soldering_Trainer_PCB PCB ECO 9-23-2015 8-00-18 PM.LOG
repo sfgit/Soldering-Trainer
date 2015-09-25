@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=GND Pin=PWR2-2
+Removed Pin From Net: NetName=GND Pin=PWR3-2
+Added Component: Designator=P2(HDR1X4)
+Added Pin To Net: NetName=GND Pin=PWR4-1
+Added Pin To Net: NetName=GND Pin=PWR5-1
+Added Pin To Net: NetName=5VOUT Pin=D1-1
+Added Pin To Net: NetName=5VOUT Pin=P1-1
+Added Pin To Net: NetName=5VOUT Pin=P2-1
+Added Pin To Net: NetName=5VOUT Pin=PWR1-1
+Added Net: Name=5VOUT
+Added Pin To Net: NetName=ADJOUT Pin=J6-1
+Added Pin To Net: NetName=ADJOUT Pin=P1-4
+Added Pin To Net: NetName=ADJOUT Pin=P2-4
+Added Pin To Net: NetName=ADJOUT Pin=U2-2
+Added Net: Name=ADJOUT
+Added Pin To Net: NetName=PWR-L Pin=P2-2
+Added Pin To Net: NetName=PWR-L Pin=P2-3
+Added Pin To Net: NetName=PWR-L Pin=PWR2-2
+Added Pin To Net: NetName=PWR-L Pin=PWR3-2
+Added Net: Name=PWR-L
+Added Pin To Net: NetName=PWR-R Pin=P1-2
+Added Pin To Net: NetName=PWR-R Pin=P1-3
+Added Pin To Net: NetName=PWR-R Pin=PWR4-2
+Added Pin To Net: NetName=PWR-R Pin=PWR5-2
+Added Net: Name=PWR-R
+Added Member To Class: ClassName=Devices Member=Component P2 Header 4

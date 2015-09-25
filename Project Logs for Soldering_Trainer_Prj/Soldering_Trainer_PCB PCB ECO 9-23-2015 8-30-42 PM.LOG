@@ -1,0 +1,16 @@
+Removed Member From Class: ClassName=Devices Member=J2
+Added Component: Designator=P3(HDR1X4)
+Added Pin To Net: NetName=NetLED1_2 Pin=LED1-2
+Added Pin To Net: NetName=NetLED1_2 Pin=LED2-2
+Added Pin To Net: NetName=NetLED1_2 Pin=LED3-2
+Added Pin To Net: NetName=NetLED1_2 Pin=LED4-2
+Added Pin To Net: NetName=NetLED1_2 Pin=LED5-2
+Added Pin To Net: NetName=NetLED1_2 Pin=LED6-2
+Added Pin To Net: NetName=NetLED1_2 Pin=LED7-2
+Added Pin To Net: NetName=NetLED1_2 Pin=LED8-2
+Added Pin To Net: NetName=NetLED1_2 Pin=P3-1
+Added Pin To Net: NetName=NetLED1_2 Pin=P3-2
+Added Pin To Net: NetName=NetLED1_2 Pin=P3-3
+Added Pin To Net: NetName=NetLED1_2 Pin=P3-4
+Added Net: Name=NetLED1_2
+Added Member To Class: ClassName=Devices Member=Component P3 Header 4

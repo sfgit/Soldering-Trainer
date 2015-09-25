@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=5V0_USB Pin=C5-1
+Removed Pin From Net: NetName=GND Pin=C5-2
+Added Component: Designator=C5(CAPC1206(3216)190_L)
+Added Component: Designator=R65(RESC0805(2012)70_L)
+Added Pin To Net: NetName=5V0_USB Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Member To Class: ClassName=Devices Member=Component C5 AP 100uF 6.3V 1206(3216)
+Added Member To Class: ClassName=U_BGA LEDs A Member=Component R65 Jumper 0805
+Added Room: Name=Devices
+Added Room: Name=U_BGA LEDs A
+Added Room: Name=U_BGA LEDs B
+Added Room: Name=U_BGA Modules

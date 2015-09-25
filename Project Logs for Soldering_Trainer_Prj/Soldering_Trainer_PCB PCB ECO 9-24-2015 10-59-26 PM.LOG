@@ -1,0 +1,261 @@
+Removed Pin From Net: NetName=5V0_USB Pin=C3-1
+Removed Pin From Net: NetName=GND Pin=C3-2
+Change Component DesignItemId : Designator=P4_LAND1 Old DesignItemId=MOD-0100-0135 New DesignItemId=
+Change Component DesignItemId : Designator=P4_LAND2 Old DesignItemId=MOD-0100-0135 New DesignItemId=
+Change Component DesignItemId : Designator=P4 Old DesignItemId=MOD-0100-0197 New DesignItemId=
+Change Component Comment : Designator=C4 Old Comment=AP 100uF 6.3V 1206(3216) New Comment=AP 4.7uF 6.3V 1206(3216)
+Change Component Comment : Designator=P4_LAND1 Old Comment=MB2100.01.A.2 New Comment=MODCMP-P056-M10X10_BGA
+Change Component Comment : Designator=P4_LAND2 Old Comment=MB2100.01.A.2 New Comment=MODCMP-P056-M10X10_BGA
+Change Component Designator: OldDesignator=C1 NewDesignator=C2
+Change Component Designator: OldDesignator=C2 NewDesignator=C3
+Change Component Designator: OldDesignator=C5 NewDesignator=C1
+Change Component Designator: OldDesignator=J3 NewDesignator=J2
+Change Component Designator: OldDesignator=J4 NewDesignator=J3
+Change Component Designator: OldDesignator=J6 NewDesignator=J4
+Change Component Designator: OldDesignator=J7 NewDesignator=J6
+Change Component Designator: OldDesignator=PWR3 NewDesignator=PWR4
+Change Component Designator: OldDesignator=PWR4 NewDesignator=PWR3
+Change Component Designator: OldDesignator=U1 NewDesignator=U2
+Change Component Designator: OldDesignator=U2 NewDesignator=U3
+Change Component Designator: OldDesignator=U8 NewDesignator=U1
+Change Component Description : Designator=P4_LAND1 Old Description=MB2100.01.A.2 New Description=Module Component - 1mm Pitch, 56-Pin, 10mmX10mm
+Change Component Description : Designator=P4_LAND2 Old Description=MB2100.01.A.2 New Description=Module Component - 1mm Pitch, 56-Pin, 10mmX10mm
+Change Component Library : Designator=P4 Old Library=Component_DB.DbLib New Library=MODCMP-P056-M10X10_BGA.SchLib
+Change Component Library : Designator=P4_LAND1 Old Library=Component_DB.DbLib New Library=MODCMP-P056-M10X10_BGA.SchLib
+Change Component Library : Designator=P4_LAND2 Old Library=Component_DB.DbLib New Library=MODCMP-P056-M10X10_BGA.SchLib
+Change Component Kind : Designator=P4_LAND2 Old Kind=Standard New Kind=Standard (No BOM)
+Change Component Kind : Designator=P4_LAND1 Old Kind=Standard New Kind=Standard (No BOM)
+Added Component: Designator=C5(CAPC1206(3216)190_L)
+Added Component: Designator=LED9(RESC1206(3216)75_L)
+Added Component: Designator=LED10(RESC1206(3216)75_L)
+Added Component: Designator=LED11(RESC1206(3216)75_L)
+Added Component: Designator=LED12(RESC1206(3216)75_L)
+Added Component: Designator=LED13(RESC1206(3216)75_L)
+Added Component: Designator=LED14(RESC1206(3216)75_L)
+Added Component: Designator=LED15(RESC1206(3216)75_L)
+Added Component: Designator=LED16(RESC1206(3216)75_L)
+Added Component: Designator=LED17(RESC1206(3216)75_L)
+Added Component: Designator=LED18(RESC1206(3216)75_L)
+Added Component: Designator=LED19(RESC1206(3216)75_L)
+Added Component: Designator=LED20(RESC1206(3216)75_L)
+Added Component: Designator=LED21(RESC1206(3216)75_L)
+Added Component: Designator=LED22(RESC1206(3216)75_L)
+Added Component: Designator=LED23(RESC1206(3216)75_L)
+Added Component: Designator=LED24(RESC1206(3216)75_L)
+Added Component: Designator=R9(RESC1206(3216)75_L)
+Added Component: Designator=R10(RESC1206(3216)75_L)
+Added Component: Designator=R11(RESC1206(3216)75_L)
+Added Component: Designator=R12(RESC1206(3216)75_L)
+Added Component: Designator=R13(RESC1206(3216)75_L)
+Added Component: Designator=R14(RESC1206(3216)75_L)
+Added Component: Designator=R15(RESC1206(3216)75_L)
+Added Component: Designator=R16(RESC1206(3216)75_L)
+Added Component: Designator=R17(RESC1206(3216)75_L)
+Added Component: Designator=R18(RESC1206(3216)75_L)
+Added Component: Designator=R19(RESC1206(3216)75_L)
+Added Component: Designator=R20(RESC1206(3216)75_L)
+Added Component: Designator=R21(RESC1206(3216)75_L)
+Added Component: Designator=R22(RESC1206(3216)75_L)
+Added Component: Designator=R23(RESC1206(3216)75_L)
+Added Component: Designator=R24(RESC1206(3216)75_L)
+Added Pin To Net: NetName=5V0_USB Pin=C5-1
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=GND Pin=LED9-2
+Added Pin To Net: NetName=GND Pin=LED10-2
+Added Pin To Net: NetName=GND Pin=LED11-2
+Added Pin To Net: NetName=GND Pin=LED12-2
+Added Pin To Net: NetName=GND Pin=LED13-2
+Added Pin To Net: NetName=GND Pin=LED14-2
+Added Pin To Net: NetName=GND Pin=LED15-2
+Added Pin To Net: NetName=GND Pin=LED16-2
+Added Pin To Net: NetName=GND Pin=LED17-2
+Added Pin To Net: NetName=GND Pin=LED18-2
+Added Pin To Net: NetName=GND Pin=LED19-2
+Added Pin To Net: NetName=GND Pin=LED20-2
+Added Pin To Net: NetName=GND Pin=LED21-2
+Added Pin To Net: NetName=GND Pin=LED22-2
+Added Pin To Net: NetName=GND Pin=LED23-2
+Added Pin To Net: NetName=GND Pin=LED24-2
+Added Pin To Net: NetName=GND Pin=P5-A4
+Added Pin To Net: NetName=GND Pin=P5-A5
+Added Pin To Net: NetName=GND Pin=P5-A6
+Added Pin To Net: NetName=GND Pin=P5-A7
+Added Pin To Net: NetName=GND Pin=P6-A4
+Added Pin To Net: NetName=GND Pin=P6-A5
+Added Pin To Net: NetName=GND Pin=P6-A6
+Added Pin To Net: NetName=GND Pin=P6-A7
+Change Net Name : Old Net Name=NetJ6_4 New Net Name=NetJ4_4
+Added Pin To Net: NetName=LEDA1 Pin=P5-J1
+Added Pin To Net: NetName=LEDA1 Pin=R9-2
+Added Net: Name=LEDA1
+Added Pin To Net: NetName=LEDA2 Pin=P5-J2
+Added Pin To Net: NetName=LEDA2 Pin=R10-2
+Added Net: Name=LEDA2
+Added Pin To Net: NetName=LEDA3 Pin=P5-J3
+Added Pin To Net: NetName=LEDA3 Pin=R11-2
+Added Net: Name=LEDA3
+Added Pin To Net: NetName=LEDA4 Pin=P5-J4
+Added Pin To Net: NetName=LEDA4 Pin=R12-2
+Added Net: Name=LEDA4
+Added Pin To Net: NetName=LEDA5 Pin=P5-J5
+Added Pin To Net: NetName=LEDA5 Pin=R13-2
+Added Net: Name=LEDA5
+Added Pin To Net: NetName=LEDA6 Pin=P5-J6
+Added Pin To Net: NetName=LEDA6 Pin=R14-2
+Added Net: Name=LEDA6
+Added Pin To Net: NetName=LEDA7 Pin=P5-J7
+Added Pin To Net: NetName=LEDA7 Pin=R15-2
+Added Net: Name=LEDA7
+Added Pin To Net: NetName=LEDA8 Pin=P5-J8
+Added Pin To Net: NetName=LEDA8 Pin=R16-2
+Added Net: Name=LEDA8
+Added Pin To Net: NetName=LEDB1 Pin=P6-J1
+Added Pin To Net: NetName=LEDB1 Pin=R17-2
+Added Net: Name=LEDB1
+Added Pin To Net: NetName=LEDB2 Pin=P6-J2
+Added Pin To Net: NetName=LEDB2 Pin=R18-2
+Added Net: Name=LEDB2
+Added Pin To Net: NetName=LEDB3 Pin=P6-J3
+Added Pin To Net: NetName=LEDB3 Pin=R19-2
+Added Net: Name=LEDB3
+Added Pin To Net: NetName=LEDB4 Pin=P6-J4
+Added Pin To Net: NetName=LEDB4 Pin=R20-2
+Added Net: Name=LEDB4
+Added Pin To Net: NetName=LEDB5 Pin=P6-J5
+Added Pin To Net: NetName=LEDB5 Pin=R21-2
+Added Net: Name=LEDB5
+Added Pin To Net: NetName=LEDB6 Pin=P6-J6
+Added Pin To Net: NetName=LEDB6 Pin=R22-2
+Added Net: Name=LEDB6
+Added Pin To Net: NetName=LEDB7 Pin=P6-J7
+Added Pin To Net: NetName=LEDB7 Pin=R23-2
+Added Net: Name=LEDB7
+Added Pin To Net: NetName=LEDB8 Pin=P6-J8
+Added Pin To Net: NetName=LEDB8 Pin=R24-2
+Added Net: Name=LEDB8
+Added Pin To Net: NetName=NetLED9_1 Pin=LED9-1
+Added Pin To Net: NetName=NetLED9_1 Pin=R9-1
+Added Net: Name=NetLED9_1
+Added Pin To Net: NetName=NetLED10_1 Pin=LED10-1
+Added Pin To Net: NetName=NetLED10_1 Pin=R10-1
+Added Net: Name=NetLED10_1
+Added Pin To Net: NetName=NetLED11_1 Pin=LED11-1
+Added Pin To Net: NetName=NetLED11_1 Pin=R11-1
+Added Net: Name=NetLED11_1
+Added Pin To Net: NetName=NetLED12_1 Pin=LED12-1
+Added Pin To Net: NetName=NetLED12_1 Pin=R12-1
+Added Net: Name=NetLED12_1
+Added Pin To Net: NetName=NetLED13_1 Pin=LED13-1
+Added Pin To Net: NetName=NetLED13_1 Pin=R13-1
+Added Net: Name=NetLED13_1
+Added Pin To Net: NetName=NetLED14_1 Pin=LED14-1
+Added Pin To Net: NetName=NetLED14_1 Pin=R14-1
+Added Net: Name=NetLED14_1
+Added Pin To Net: NetName=NetLED15_1 Pin=LED15-1
+Added Pin To Net: NetName=NetLED15_1 Pin=R15-1
+Added Net: Name=NetLED15_1
+Added Pin To Net: NetName=NetLED16_1 Pin=LED16-1
+Added Pin To Net: NetName=NetLED16_1 Pin=R16-1
+Added Net: Name=NetLED16_1
+Added Pin To Net: NetName=NetLED17_1 Pin=LED17-1
+Added Pin To Net: NetName=NetLED17_1 Pin=R17-1
+Added Net: Name=NetLED17_1
+Added Pin To Net: NetName=NetLED18_1 Pin=LED18-1
+Added Pin To Net: NetName=NetLED18_1 Pin=R18-1
+Added Net: Name=NetLED18_1
+Added Pin To Net: NetName=NetLED19_1 Pin=LED19-1
+Added Pin To Net: NetName=NetLED19_1 Pin=R19-1
+Added Net: Name=NetLED19_1
+Added Pin To Net: NetName=NetLED20_1 Pin=LED20-1
+Added Pin To Net: NetName=NetLED20_1 Pin=R20-1
+Added Net: Name=NetLED20_1
+Added Pin To Net: NetName=NetLED21_1 Pin=LED21-1
+Added Pin To Net: NetName=NetLED21_1 Pin=R21-1
+Added Net: Name=NetLED21_1
+Added Pin To Net: NetName=NetLED22_1 Pin=LED22-1
+Added Pin To Net: NetName=NetLED22_1 Pin=R22-1
+Added Net: Name=NetLED22_1
+Added Pin To Net: NetName=NetLED23_1 Pin=LED23-1
+Added Pin To Net: NetName=NetLED23_1 Pin=R23-1
+Added Net: Name=NetLED23_1
+Added Pin To Net: NetName=NetLED24_1 Pin=LED24-1
+Added Pin To Net: NetName=NetLED24_1 Pin=R24-1
+Added Net: Name=NetLED24_1
+Added Pin To Net: NetName=NetP4_1 Pin=P4-1
+Added Pin To Net: NetName=NetP4_1 Pin=P4_LAND1-J1
+Added Net: Name=NetP4_1
+Added Pin To Net: NetName=NetP4_2 Pin=P4-2
+Added Pin To Net: NetName=NetP4_2 Pin=P4_LAND1-J2
+Added Net: Name=NetP4_2
+Added Pin To Net: NetName=NetP4_3 Pin=P4-3
+Added Pin To Net: NetName=NetP4_3 Pin=P4_LAND1-J3
+Added Net: Name=NetP4_3
+Added Pin To Net: NetName=NetP4_4 Pin=P4-4
+Added Pin To Net: NetName=NetP4_4 Pin=P4_LAND1-J4
+Added Net: Name=NetP4_4
+Added Pin To Net: NetName=NetP4_5 Pin=P4-5
+Added Pin To Net: NetName=NetP4_5 Pin=P4_LAND1-J5
+Added Net: Name=NetP4_5
+Added Pin To Net: NetName=NetP4_6 Pin=P4-6
+Added Pin To Net: NetName=NetP4_6 Pin=P4_LAND1-J6
+Added Net: Name=NetP4_6
+Added Pin To Net: NetName=NetP4_7 Pin=P4-7
+Added Pin To Net: NetName=NetP4_7 Pin=P4_LAND1-J7
+Added Net: Name=NetP4_7
+Added Pin To Net: NetName=NetP4_8 Pin=P4-8
+Added Pin To Net: NetName=NetP4_8 Pin=P4_LAND1-J8
+Added Net: Name=NetP4_8
+Added Pin To Net: NetName=NetP4_10 Pin=P4-10
+Added Pin To Net: NetName=NetP4_10 Pin=P4_LAND2-A5
+Added Net: Name=NetP4_10
+Added Pin To Net: NetName=NetP4_11 Pin=P4-11
+Added Pin To Net: NetName=NetP4_11 Pin=P4_LAND2-A6
+Added Net: Name=NetP4_11
+Added Pin To Net: NetName=NetP4_12 Pin=P4-12
+Added Pin To Net: NetName=NetP4_12 Pin=P4_LAND2-A7
+Added Net: Name=NetP4_12
+Added Pin To Net: NetName=NetP4_13 Pin=P4-13
+Added Pin To Net: NetName=NetP4_13 Pin=P4_LAND2-J8
+Added Net: Name=NetP4_13
+Added Pin To Net: NetName=NetP4_14 Pin=P4-14
+Added Pin To Net: NetName=NetP4_14 Pin=P4_LAND2-J7
+Added Net: Name=NetP4_14
+Added Pin To Net: NetName=NetP4_15 Pin=P4-15
+Added Pin To Net: NetName=NetP4_15 Pin=P4_LAND2-J6
+Added Net: Name=NetP4_15
+Added Pin To Net: NetName=NetP4_16 Pin=P4-16
+Added Pin To Net: NetName=NetP4_16 Pin=P4_LAND2-J5
+Added Net: Name=NetP4_16
+Added Pin To Net: NetName=NetP4_17 Pin=P4-17
+Added Pin To Net: NetName=NetP4_17 Pin=P4_LAND2-J4
+Added Net: Name=NetP4_17
+Added Pin To Net: NetName=NetP4_18 Pin=P4-18
+Added Pin To Net: NetName=NetP4_18 Pin=P4_LAND2-J3
+Added Net: Name=NetP4_18
+Added Pin To Net: NetName=NetP4_19 Pin=P4-19
+Added Pin To Net: NetName=NetP4_19 Pin=P4_LAND2-J2
+Added Net: Name=NetP4_19
+Added Pin To Net: NetName=NetP4_20 Pin=P4-20
+Added Pin To Net: NetName=NetP4_20 Pin=P4_LAND2-J1
+Added Net: Name=NetP4_20
+Added Pin To Net: NetName=NetP4_21 Pin=P4-21
+Added Pin To Net: NetName=NetP4_21 Pin=P4_LAND1-A7
+Added Net: Name=NetP4_21
+Added Pin To Net: NetName=NetP4_22 Pin=P4-22
+Added Pin To Net: NetName=NetP4_22 Pin=P4_LAND1-A6
+Added Net: Name=NetP4_22
+Added Pin To Net: NetName=NetP4_23 Pin=P4-23
+Added Pin To Net: NetName=NetP4_23 Pin=P4_LAND1-A5
+Added Net: Name=NetP4_23
+Added Pin To Net: NetName=NetP4_24 Pin=P4-24
+Added Pin To Net: NetName=NetP4_24 Pin=P4_LAND1-A4
+Added Net: Name=NetP4_24
+Added Class: Name=U_BGA LEDs A
+Added Class: Name=U_BGA LEDs B
+Added Class: Name=U_BGA Modules
+Added Member To Class: ClassName=Devices Member=Component C5 AP 100uF 6.3V 1206(3216)
+Added Member To Class: ClassName=Devices Member=Component P3 Header 12
+Added Member To Class: ClassName=Devices Member=Component P4_LAND1 MODCMP-P056-M10X10_BGA
+Added Member To Class: ClassName=Devices Member=Component P4_LAND2 MODCMP-P056-M10X10_BGA
+Added Member To Class: ClassName=Devices Member=Component P4 BBCMP-P24-M1200X700
+Added Member To Class: ClassName=Devices Member=Component U3 LM1117T-ADJ

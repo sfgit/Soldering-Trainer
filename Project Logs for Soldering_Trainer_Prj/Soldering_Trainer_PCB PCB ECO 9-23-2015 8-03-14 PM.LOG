@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=PWR-R Pin=P1-2
+Removed Pin From Net: NetName=PWR-R Pin=P1-3
+Removed Pin From Net: NetName=PWR-L Pin=P2-2
+Removed Pin From Net: NetName=PWR-L Pin=P2-3
+Added Pin To Net: NetName=PWR-L Pin=P1-2
+Added Pin To Net: NetName=PWR-L Pin=P1-3
+Added Pin To Net: NetName=PWR-R Pin=P2-2
+Added Pin To Net: NetName=PWR-R Pin=P2-3

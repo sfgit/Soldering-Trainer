@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=NetD1_1 Pin=U2-3
+Removed Member From Class: ClassName=Devices Member=U2
+Added Component: Designator=P?(HDR1X4)
+Added Component: Designator=U?(T03B)
+Added Pin To Net: NetName=NetD1_1 Pin=U?-3
+Added Member To Class: ClassName=Devices Member=Component P? Header 4
+Added Member To Class: ClassName=Devices Member=Component U? LM1117T-ADJ

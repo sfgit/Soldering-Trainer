@@ -1,0 +1,23 @@
+Removed Pin From Net: NetName=GND Pin=C3-1
+Removed Pin From Net: NetName=5V0_USB Pin=C3-2
+Removed Member From Class: ClassName=Devices Member=U?
+Change Component DesignItemId : Designator=C3 Old DesignItemId=CMP-0404-2232 New DesignItemId=CMP-0402-0000
+Change Component Footprint: Designator=C3 Old Footprint=CAPC0603(1608)100_L New Footprint=CAPC1206(3216)190_L
+Change Component Comment : Designator=C3 Old Comment=CAP 4.7uF 10V 0603(1608) New Comment=AP 4.7uF 6.3V 1206(3216)
+Change Component Designator: OldDesignator=J3 NewDesignator=J2
+Change Component Designator: OldDesignator=J5 NewDesignator=J3
+Change Component Designator: OldDesignator=J6 NewDesignator=J5
+Change Component Designator: OldDesignator=U1 NewDesignator=U2
+Change Component Designator: OldDesignator=U? NewDesignator=U1
+Added Pin To Net: NetName=5V0_USB Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Change Net Name : Old Net Name=NetJ3_1 New Net Name=NetJ2_1
+Change Net Name : Old Net Name=NetJ3_2 New Net Name=NetJ2_2
+Change Net Name : Old Net Name=NetJ3_3 New Net Name=NetJ2_3
+Change Net Name : Old Net Name=NetJ3_4 New Net Name=NetJ2_4
+Change Net Name : Old Net Name=NetJ3_5 New Net Name=NetJ2_5
+Change Net Name : Old Net Name=NetJ3_6 New Net Name=NetJ2_6
+Change Net Name : Old Net Name=NetJ3_7 New Net Name=NetJ2_7
+Change Net Name : Old Net Name=NetJ3_8 New Net Name=NetJ2_8
+Added Member To Class: ClassName=Devices Member=Component U2 LM1117T-3.3
+Added Room: Name=Devices

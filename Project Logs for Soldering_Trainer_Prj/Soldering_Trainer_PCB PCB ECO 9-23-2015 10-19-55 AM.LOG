@@ -1,0 +1,9 @@
+Added Component: Designator=D1(ONSC-AXIAL_LEAD-2-267-05_V)
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=U1-3
+Added Net: Name=NetD1_1
+Added Pin To Net: NetName=NetD1_2 Pin=D1-2
+Added Pin To Net: NetName=NetD1_2 Pin=J5-2
+Added Net: Name=NetD1_2
+Added Member To Class: ClassName=Devices Member=Component D1 1N5820RLG
+Added Room: Name=Devices
