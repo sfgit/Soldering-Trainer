@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=NetF1_2 Pin=J11-1
+Removed Pin From Net: NetName=GND Pin=J11-2
+Removed Pin From Net: NetName=GND Pin=J11-3
+Added Pin To Net: NetName=NetP4_1 Pin=P4-1
+Added Pin To Net: NetName=NetP4_1 Pin=P4_LAND1-J8
+Added Net: Name=NetP4_1
+Added Pin To Net: NetName=NetP4_2 Pin=P4-2
+Added Pin To Net: NetName=NetP4_2 Pin=P4_LAND1-J7
+Added Net: Name=NetP4_2
+Added Pin To Net: NetName=NetP4_3 Pin=P4-3
+Added Pin To Net: NetName=NetP4_3 Pin=P4_LAND1-J6
+Added Net: Name=NetP4_3
+Added Pin To Net: NetName=NetP4_4 Pin=P4-4
+Added Pin To Net: NetName=NetP4_4 Pin=P4_LAND1-J5
+Added Net: Name=NetP4_4
+Added Pin To Net: NetName=NetP4_13 Pin=P4-13
+Added Pin To Net: NetName=NetP4_13 Pin=P4_LAND2-J8
+Added Net: Name=NetP4_13
+Added Pin To Net: NetName=NetP4_14 Pin=P4-14
+Added Pin To Net: NetName=NetP4_14 Pin=P4_LAND2-J7
+Added Net: Name=NetP4_14
+Added Pin To Net: NetName=NetP4_15 Pin=P4-15
+Added Pin To Net: NetName=NetP4_15 Pin=P4_LAND2-J6
+Added Net: Name=NetP4_15
+Added Pin To Net: NetName=NetP4_16 Pin=P4-16
+Added Pin To Net: NetName=NetP4_16 Pin=P4_LAND2-J5
+Added Net: Name=NetP4_16

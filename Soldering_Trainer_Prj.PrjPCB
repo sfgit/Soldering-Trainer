@@ -29,7 +29,7 @@ PowerPortNamesTakePriority=0
 PushECOToAnnotationFile=1
 DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
-OutputPath=Project Outputs for Soldering_Trainer_Prj
+OutputPath=
 
 [Document1]
 DocumentPath=Soldering_Trainer_PCB.PcbDoc
@@ -464,7 +464,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=0
 
 [Generic_EDE]
-OutputDir=Project Outputs for Soldering_Trainer_Prj
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
@@ -1169,7 +1169,7 @@ Type8=1
 Type9=1
 Type10=1
 Type11=1
-Type12=1
+Type12=0
 Type13=1
 Type14=1
 Type15=1

@@ -1,0 +1,50 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\mattb_000\Documents\GitHub\Soldering Trainer\Soldering_Trainer_PCB.PcbDoc
+Date     : 9/25/2015
+Time     : 8:09:20 PM
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=10mil) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=150mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=5mil) (Max=40mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=5mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net GND Between Pad LED20-2 (2470,299.784mil) And Track on layer Bottom Layer (2589.37,269.96mil)
+   Violation between Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (2036.85,336.85mil) And Pad LED17-2 (2210,299.784mil)
+   Violation between Un-Routed Net Constraint: Net GND Between Pad PWR3-1 (2000,905mil) And Pad LED13-2 (2210,803.465mil)
+   Violation between Un-Routed Net Constraint: Net GND Between Pad PWR5-1 (1900,1305mil) And Pad LED9-2 (2210,1288.465mil)
+   Violation between Un-Routed Net Constraint: Net GND Between Track on layer Bottom Layer (2425.591,859.693mil) And Pad P4_LAND2-A4 (3047.638,927.677mil)
+   Violation between Un-Routed Net Constraint: Net GND Between Pad LED8-2 (-538.15,1295mil) And Pad PWR4-1 (250,1305mil)
+Rule Violations :6
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+
+Violations Detected : 6
+Time Elapsed        : 00:00:02
