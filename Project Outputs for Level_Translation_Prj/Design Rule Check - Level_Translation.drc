@@ -1,0 +1,116 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc
+Date     : 10/26/2015
+Time     : 12:37:34 AM
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+   Violation between Text "J2" (1620mil,2315mil)  Top Overlay and 
+                     Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay
+   Violation between Text "B2" (1540mil,1540mil)  Top Overlay and 
+                     Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay
+   Violation between Text "B3" (1540mil,1935mil)  Top Overlay and 
+                     Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay
+   Violation between Text "B5" (1540mil,1240mil)  Top Overlay and 
+                     Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay
+   Violation between Text "B3" (1540mil,1440mil)  Top Overlay and 
+                     Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay
+   Violation between Text "B4" (1540mil,1340mil)  Top Overlay and 
+                     Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay
+   Violation between Text "B5" (1540mil,1735mil)  Top Overlay and 
+                     Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay
+   Violation between Text "B4" (1540mil,1835mil)  Top Overlay and 
+                     Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay
+   Violation between Text "B2" (1540mil,2035mil)  Top Overlay and 
+                     Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay
+   Violation between Text "J2" (1620mil,2315mil)  Top Overlay and 
+                     Track (1620mil,2300mil)(1720mil,2300mil)  Top Overlay
+Rule Violations :10
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Violation between Track (1458.032mil,1872.362mil)(1461.969mil,1872.362mil)  Top Overlay and 
+                     Pad C1-1(1428.504mil,1895mil)  Top Layer
+   Violation between Track (1458.032mil,1917.638mil)(1461.969mil,1917.638mil)  Top Overlay and 
+                     Pad C1-1(1428.504mil,1895mil)  Top Layer
+   Violation between Track (1458.032mil,1872.362mil)(1461.969mil,1872.362mil)  Top Overlay and 
+                     Pad C1-2(1491.496mil,1895mil)  Top Layer
+   Violation between Track (1458.032mil,1917.638mil)(1461.969mil,1917.638mil)  Top Overlay and 
+                     Pad C1-2(1491.496mil,1895mil)  Top Layer
+Rule Violations :4
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+   Violation between Pad U8-2(1270.748mil,1805.315mil)  Top Layer and 
+                     Pad U8-1(1270.748mil,1830.906mil)  Top Layer
+   Violation between Pad U8-3(1270.748mil,1779.724mil)  Top Layer and 
+                     Pad U8-2(1270.748mil,1805.315mil)  Top Layer
+   Violation between Pad U8-4(1270.748mil,1754.134mil)  Top Layer and 
+                     Pad U8-3(1270.748mil,1779.724mil)  Top Layer
+   Violation between Pad U8-5(1270.748mil,1728.543mil)  Top Layer and 
+                     Pad U8-4(1270.748mil,1754.134mil)  Top Layer
+   Violation between Pad U8-6(1270.748mil,1702.953mil)  Top Layer and 
+                     Pad U8-5(1270.748mil,1728.543mil)  Top Layer
+   Violation between Pad U8-7(1270.748mil,1677.362mil)  Top Layer and 
+                     Pad U8-6(1270.748mil,1702.953mil)  Top Layer
+   Violation between Pad U8-8(1270.748mil,1651.772mil)  Top Layer and 
+                     Pad U8-7(1270.748mil,1677.362mil)  Top Layer
+   Violation between Pad U8-9(1270.748mil,1626.181mil)  Top Layer and 
+                     Pad U8-8(1270.748mil,1651.772mil)  Top Layer
+   Violation between Pad U8-10(1270.748mil,1600.591mil)  Top Layer and 
+                     Pad U8-9(1270.748mil,1626.181mil)  Top Layer
+   Violation between Pad U8-11(1270.748mil,1575mil)  Top Layer and 
+                     Pad U8-10(1270.748mil,1600.591mil)  Top Layer
+   Violation between Pad U8-12(1270.748mil,1549.409mil)  Top Layer and 
+                     Pad U8-11(1270.748mil,1575mil)  Top Layer
+   Violation between Pad U8-23(1489.252mil,1805.315mil)  Top Layer and 
+                     Pad U8-24(1489.252mil,1830.906mil)  Top Layer
+   Violation between Pad U8-22(1489.252mil,1779.724mil)  Top Layer and 
+                     Pad U8-23(1489.252mil,1805.315mil)  Top Layer
+   Violation between Pad U8-21(1489.252mil,1754.134mil)  Top Layer and 
+                     Pad U8-22(1489.252mil,1779.724mil)  Top Layer
+   Violation between Pad U8-20(1489.252mil,1728.543mil)  Top Layer and 
+                     Pad U8-21(1489.252mil,1754.134mil)  Top Layer
+   Violation between Pad U8-19(1489.252mil,1702.953mil)  Top Layer and 
+                     Pad U8-20(1489.252mil,1728.543mil)  Top Layer
+   Violation between Pad U8-18(1489.252mil,1677.362mil)  Top Layer and 
+                     Pad U8-19(1489.252mil,1702.953mil)  Top Layer
+   Violation between Pad U8-17(1489.252mil,1651.772mil)  Top Layer and 
+                     Pad U8-18(1489.252mil,1677.362mil)  Top Layer
+   Violation between Pad U8-16(1489.252mil,1626.181mil)  Top Layer and 
+                     Pad U8-17(1489.252mil,1651.772mil)  Top Layer
+   Violation between Pad U8-15(1489.252mil,1600.591mil)  Top Layer and 
+                     Pad U8-16(1489.252mil,1626.181mil)  Top Layer
+   Violation between Pad U8-14(1489.252mil,1575mil)  Top Layer and 
+                     Pad U8-15(1489.252mil,1600.591mil)  Top Layer
+   Violation between Pad U8-13(1489.252mil,1549.409mil)  Top Layer and 
+                     Pad U8-14(1489.252mil,1575mil)  Top Layer
+Rule Violations :22
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=7mil) (Max=20mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+
+Violations Detected : 36
+Time Elapsed        : 00:00:00

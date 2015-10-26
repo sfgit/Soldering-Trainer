@@ -1,0 +1,67 @@
+Removed Member From Class: ClassName=Level_Translation Member=P3
+Added Component: Designator=J2(HDR1X12)
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=5V0 Pin=J1-12
+Added Pin To Net: NetName=5V0 Pin=J2-1
+Added Pin To Net: NetName=GND Pin=J2-12
+Added Pin To Net: NetName=1A1 Pin=J1-11
+Added Pin To Net: NetName=1A1 Pin=U8-3
+Added Net: Name=1A1
+Added Pin To Net: NetName=1A2 Pin=J1-10
+Added Pin To Net: NetName=1A2 Pin=U8-4
+Added Net: Name=1A2
+Added Pin To Net: NetName=1A3 Pin=J1-9
+Added Pin To Net: NetName=1A3 Pin=U8-7
+Added Net: Name=1A3
+Added Pin To Net: NetName=1A4 Pin=J1-8
+Added Pin To Net: NetName=1A4 Pin=U8-8
+Added Net: Name=1A4
+Added Pin To Net: NetName=1A5 Pin=J1-7
+Added Pin To Net: NetName=1A5 Pin=U8-11
+Added Net: Name=1A5
+Added Pin To Net: NetName=1B1 Pin=J2-2
+Added Pin To Net: NetName=1B1 Pin=U8-2
+Added Net: Name=1B1
+Added Pin To Net: NetName=1B2 Pin=J2-3
+Added Pin To Net: NetName=1B2 Pin=U8-5
+Added Net: Name=1B2
+Added Pin To Net: NetName=1B3 Pin=J2-4
+Added Pin To Net: NetName=1B3 Pin=U8-6
+Added Net: Name=1B3
+Added Pin To Net: NetName=1B4 Pin=J2-5
+Added Pin To Net: NetName=1B4 Pin=U8-9
+Added Net: Name=1B4
+Added Pin To Net: NetName=1B5 Pin=J2-6
+Added Pin To Net: NetName=1B5 Pin=U8-10
+Added Net: Name=1B5
+Added Pin To Net: NetName=2A1 Pin=J1-6
+Added Pin To Net: NetName=2A1 Pin=U8-14
+Added Net: Name=2A1
+Added Pin To Net: NetName=2A2 Pin=J1-5
+Added Pin To Net: NetName=2A2 Pin=U8-17
+Added Net: Name=2A2
+Added Pin To Net: NetName=2A3 Pin=J1-4
+Added Pin To Net: NetName=2A3 Pin=U8-18
+Added Net: Name=2A3
+Added Pin To Net: NetName=2A4 Pin=J1-3
+Added Pin To Net: NetName=2A4 Pin=U8-21
+Added Net: Name=2A4
+Added Pin To Net: NetName=2A5 Pin=J1-2
+Added Pin To Net: NetName=2A5 Pin=U8-22
+Added Net: Name=2A5
+Added Pin To Net: NetName=2B1 Pin=J2-7
+Added Pin To Net: NetName=2B1 Pin=U8-15
+Added Net: Name=2B1
+Added Pin To Net: NetName=2B2 Pin=J2-8
+Added Pin To Net: NetName=2B2 Pin=U8-16
+Added Net: Name=2B2
+Added Pin To Net: NetName=2B3 Pin=J2-9
+Added Pin To Net: NetName=2B3 Pin=U8-19
+Added Net: Name=2B3
+Added Pin To Net: NetName=2B4 Pin=J2-10
+Added Pin To Net: NetName=2B4 Pin=U8-20
+Added Net: Name=2B4
+Added Pin To Net: NetName=2B5 Pin=J2-11
+Added Pin To Net: NetName=2B5 Pin=U8-23
+Added Net: Name=2B5
+Added Member To Class: ClassName=Level_Translation Member=Component J2 Header 12

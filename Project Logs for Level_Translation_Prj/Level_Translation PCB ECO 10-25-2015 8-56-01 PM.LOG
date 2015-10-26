@@ -1,0 +1,14 @@
+Added Component: Designator=J1(HDR1X12)
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=2A5 Pin=J1-2
+Added Pin To Net: NetName=2A4 Pin=J1-3
+Added Pin To Net: NetName=2A3 Pin=J1-4
+Added Pin To Net: NetName=2A2 Pin=J1-5
+Added Pin To Net: NetName=2A1 Pin=J1-6
+Added Pin To Net: NetName=1A5 Pin=J1-7
+Added Pin To Net: NetName=1A4 Pin=J1-8
+Added Pin To Net: NetName=1A3 Pin=J1-9
+Added Pin To Net: NetName=1A2 Pin=J1-10
+Added Pin To Net: NetName=1A1 Pin=J1-11
+Added Pin To Net: NetName=5V0 Pin=J1-12
+Added Member To Class: ClassName=Level_Translation Member=Component J1 Header 12

@@ -1,0 +1,33 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 10:08:42 AM On 10/23/2015
+
+Output: Gerber - BB Power Supply
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [BB Power Supply.PcbDoc]
+   Generated File[BB Power Supply.GTL]
+   Generated File[BB Power Supply.GBL]
+   Generated File[BB Power Supply.GPB]
+   Generated File[BB Power Supply.GPT]
+   Generated File[BB Power Supply.GTO]
+   Generated File[BB Power Supply.GTP]
+   Generated File[BB Power Supply.GTS]
+   Generated File[BB Power Supply.GBS]
+   Generated File[BB Power Supply.GBP]
+   Generated File[BB Power Supply.GBO]
+   Generated File[BB Power Supply.GM1]
+   Generated File[BB Power Supply.GM2]
+   Generated File[BB Power Supply.GM7]
+   Generated File[BB Power Supply.GM13]
+   Generated File[BB Power Supply.GM15]
+   Generated File[BB Power Supply.GD1]
+   Generated File[BB Power Supply.GG1]
+   Generated File[BB Power Supply.RUL]
+   Generated File[BB Power Supply.EXTREP]
+   Generated File[BB Power Supply.REP]
+
+
+Files Generated   : 20
+Documents Printed : 0
+
+Finished Output Generation At 10:08:44 AM On 10/23/2015

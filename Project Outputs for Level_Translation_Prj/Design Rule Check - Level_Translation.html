@@ -1,0 +1,488 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body {
+			font-family : verdana;
+		}
+		td, th {
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;
+		}
+		th {
+			background-color : #A6CAF0;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+		}
+		
+		.DRC_summary_header {							
+			padding-bottom : 0.1em;
+			border : 0px solid black;							
+			width: 100%;
+                        align: right;
+                        
+		}
+
+		.DRC_summary_header_col1, 
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3
+		{
+			color : black;
+			font-size:150%;
+                        padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2: 0em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top;
+			font-weight: bold;				
+		}
+		
+		.DRC_summary_header_col1 	
+		{		                       
+			text-align: right;
+                        width: auto;	
+		}
+
+		.DRC_summary_header_col2 	
+		{		
+			text-align: center;	
+		}
+
+		.DRC_summary_header_col3 	
+		{		
+			text-align: left;	
+		}
+
+
+		
+		.header_holder
+		{
+		Width = 100%;
+		border = 0px solid green;
+		padding = 0;
+		}
+		
+		
+		
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+			left:0;
+			top:0;
+			padding-top : 0.1em;			
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top
+
+		}
+		.front_matter {	
+			
+			margin-top: 5px;
+ 			margin-left: 0px;					 			
+ 			horizontal-align: left;
+		}
+				
+		
+		.front_matter_column1 {
+			width : 10em;	
+			text-align  : right;
+			padding-right:0.1em;
+			
+		}
+		
+		.front_matter_column2 {
+                        width: 0.1em;
+			align: center;
+			text-align : center;
+			margin-right  : 0.1em;	
+			margin-left   : 0.1em;
+		}
+		.front_matter_column3 {
+			width         : auto;  
+			text-align    : left;	
+			margin-right  : 0.5em;				
+		}
+		
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD13\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td Style="width:70%">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">10/26/2015</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">12:37:34 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc" class="file"><acronym title="C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc">C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td Style="Width:30%">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3" style="color : red">36</td></tr>
+</table>
+</td>
+</table>
+<hr><a name="ID0R2SGIHP2YUIJ24VEYJNCDXDSCIITLCG1XA0GNLX1AO21TL4OVCJ"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID15HMXECMT10FDP455JD4CIVBZJNUZFHTVXR3SSN4EXQSLBSFXIUJ">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDE4X2YDXJKUAUBB1A2YZ5XU2AX2WSMEOFD3RAKHQXMLEIL0BOOCM">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">10</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3C3ANPRW1P14OUYUJ0U3C1E0COLLP2OCOFRHA0HWPLIXBG0ORV0B">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJXACVGSO20K3KSNDQXIDQYMIVOFOV2DBEZZTJXK4DXZ1VFRGFIHI">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">22</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJB2FBJNKRJJ0ONTSHWEATDSRIEMD3JE1JMJQUJJUOE210OZRM1EG">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLGO3XCX3WZORJTSZ5WO55CBJSFMNXI4IQB1QLLNHCJFJ0LKY24QM">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHGRUWO1RA1FAODZ51E1DCVKZWD0RCRRRY22XETB3FZV20WWU2XDK">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5UZCFSQBQNLDCFCRRTUTEZYSIFICIPREKCV5YJN5BND15MOYISPH">Width Constraint (Min=7mil) (Max=20mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGYV04FUXDQPFNVURIHL4YCMNQP22MQYQUNS0JAJUXX3PMU4ZUBQD">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDD5LPORAX5MOZILRG0G2RBQJP2HZPOSZI0ICDTWE3PLSZPMOEVPPM">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUT1PHGJPYIDHMI2T3U30IADI1HUI2PZ1YMNH0AGWTLUCO4Q5CXFI">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2FLADGSLR20WO1JGATD3ACPK0KRIWUNPPUIB04HNEJNZ0QM0MOXC">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">36</td>
+</tr>
+</table><br><hr><a name="IDE4X2YDXJKUAUBB1A2YZ5XU2AX2WSMEOFD3RAKHQXMLEIL0BOOCM"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1614mil|Location2.X=1675.984mil|Location1.Y=2309mil|Location2.Y=2350.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1614mil|Location2.X=1675.984mil|Location1.Y=2309mil|Location2.Y=2350.99mil|Absolute=True">Text "J2" (1620mil,2315mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1533mil|Location2.Y=1586.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1533mil|Location2.Y=1586.987mil|Absolute=True">Text "B2" (1540mil,1540mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1928mil|Location2.Y=1981.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1928mil|Location2.Y=1981.987mil|Absolute=True">Text "B3" (1540mil,1935mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1233mil|Location2.Y=1286.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1233mil|Location2.Y=1286.987mil|Absolute=True">Text "B5" (1540mil,1240mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1433mil|Location2.Y=1486.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1433mil|Location2.Y=1486.987mil|Absolute=True">Text "B3" (1540mil,1440mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1333mil|Location2.Y=1386.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1333mil|Location2.Y=1386.987mil|Absolute=True">Text "B4" (1540mil,1340mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1728mil|Location2.Y=1781.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1728mil|Location2.Y=1781.987mil|Absolute=True">Text "B5" (1540mil,1735mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1828mil|Location2.Y=1881.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=1828mil|Location2.Y=1881.987mil|Absolute=True">Text "B4" (1540mil,1835mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=2028mil|Location2.Y=2081.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1533mil|Location2.X=1613.645mil|Location1.Y=2028mil|Location2.Y=2081.987mil|Absolute=True">Text "B2" (1540mil,2035mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1623.937mil|Location1.Y=1171.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,1175mil)(1620mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1614mil|Location2.X=1675.984mil|Location1.Y=2309mil|Location2.Y=2350.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1614mil|Location2.X=1675.984mil|Location1.Y=2309mil|Location2.Y=2350.99mil|Absolute=True">Text "J2" (1620mil,2315mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1723.937mil|Location1.Y=2296.063mil|Location2.Y=2303.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1616.063mil|Location2.X=1723.937mil|Location1.Y=2296.063mil|Location2.Y=2303.937mil|Absolute=True">Track (1620mil,2300mil)(1720mil,2300mil)  Top Overlay</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="ID3C3ANPRW1P14OUYUJ0U3C1E0COLLP2OCOFRHA0HWPLIXBG0ORV0B"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1454.095mil|Location2.X=1465.906mil|Location1.Y=1868.425mil|Location2.Y=1876.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1454.095mil|Location2.X=1465.906mil|Location1.Y=1868.425mil|Location2.Y=1876.299mil|Absolute=True">Track (1458.032mil,1872.362mil)(1461.969mil,1872.362mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1405.803mil|Location2.X=1451.205mil|Location1.Y=1864.425mil|Location2.Y=1925.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1405.803mil|Location2.X=1451.205mil|Location1.Y=1864.425mil|Location2.Y=1925.575mil|Absolute=True">Pad C1-1(1428.504mil,1895mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1454.095mil|Location2.X=1465.906mil|Location1.Y=1913.701mil|Location2.Y=1921.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1454.095mil|Location2.X=1465.906mil|Location1.Y=1913.701mil|Location2.Y=1921.575mil|Absolute=True">Track (1458.032mil,1917.638mil)(1461.969mil,1917.638mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1405.803mil|Location2.X=1451.205mil|Location1.Y=1864.425mil|Location2.Y=1925.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1405.803mil|Location2.X=1451.205mil|Location1.Y=1864.425mil|Location2.Y=1925.575mil|Absolute=True">Pad C1-1(1428.504mil,1895mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1454.095mil|Location2.X=1465.906mil|Location1.Y=1868.425mil|Location2.Y=1876.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1454.095mil|Location2.X=1465.906mil|Location1.Y=1868.425mil|Location2.Y=1876.299mil|Absolute=True">Track (1458.032mil,1872.362mil)(1461.969mil,1872.362mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1468.795mil|Location2.X=1514.197mil|Location1.Y=1864.425mil|Location2.Y=1925.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1468.795mil|Location2.X=1514.197mil|Location1.Y=1864.425mil|Location2.Y=1925.575mil|Absolute=True">Pad C1-2(1491.496mil,1895mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1454.095mil|Location2.X=1465.906mil|Location1.Y=1913.701mil|Location2.Y=1921.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1454.095mil|Location2.X=1465.906mil|Location1.Y=1913.701mil|Location2.Y=1921.575mil|Absolute=True">Track (1458.032mil,1917.638mil)(1461.969mil,1917.638mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1468.795mil|Location2.X=1514.197mil|Location1.Y=1864.425mil|Location2.Y=1925.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1468.795mil|Location2.X=1514.197mil|Location1.Y=1864.425mil|Location2.Y=1925.575mil|Absolute=True">Pad C1-2(1491.496mil,1895mil)  Top Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDJXACVGSO20K3KSNDQXIDQYMIVOFOV2DBEZZTJXK4DXZ1VFRGFIHI"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1795.669mil|Location2.Y=1814.96mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1795.669mil|Location2.Y=1814.96mil|Absolute=True">Pad U8-2(1270.748mil,1805.315mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1821.26mil|Location2.Y=1840.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1821.26mil|Location2.Y=1840.551mil|Absolute=True">Pad U8-1(1270.748mil,1830.906mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1770.079mil|Location2.Y=1789.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1770.079mil|Location2.Y=1789.37mil|Absolute=True">Pad U8-3(1270.748mil,1779.724mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1795.669mil|Location2.Y=1814.96mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1795.669mil|Location2.Y=1814.96mil|Absolute=True">Pad U8-2(1270.748mil,1805.315mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1744.488mil|Location2.Y=1763.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1744.488mil|Location2.Y=1763.779mil|Absolute=True">Pad U8-4(1270.748mil,1754.134mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1770.079mil|Location2.Y=1789.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1770.079mil|Location2.Y=1789.37mil|Absolute=True">Pad U8-3(1270.748mil,1779.724mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1718.898mil|Location2.Y=1738.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1718.898mil|Location2.Y=1738.189mil|Absolute=True">Pad U8-5(1270.748mil,1728.543mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1744.488mil|Location2.Y=1763.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1744.488mil|Location2.Y=1763.779mil|Absolute=True">Pad U8-4(1270.748mil,1754.134mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1693.307mil|Location2.Y=1712.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1693.307mil|Location2.Y=1712.598mil|Absolute=True">Pad U8-6(1270.748mil,1702.953mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1718.898mil|Location2.Y=1738.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1718.898mil|Location2.Y=1738.189mil|Absolute=True">Pad U8-5(1270.748mil,1728.543mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1667.717mil|Location2.Y=1687.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1667.717mil|Location2.Y=1687.008mil|Absolute=True">Pad U8-7(1270.748mil,1677.362mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1693.307mil|Location2.Y=1712.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1693.307mil|Location2.Y=1712.598mil|Absolute=True">Pad U8-6(1270.748mil,1702.953mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1642.126mil|Location2.Y=1661.417mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1642.126mil|Location2.Y=1661.417mil|Absolute=True">Pad U8-8(1270.748mil,1651.772mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1667.717mil|Location2.Y=1687.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1667.717mil|Location2.Y=1687.008mil|Absolute=True">Pad U8-7(1270.748mil,1677.362mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1616.535mil|Location2.Y=1635.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1616.535mil|Location2.Y=1635.827mil|Absolute=True">Pad U8-9(1270.748mil,1626.181mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1642.126mil|Location2.Y=1661.417mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1642.126mil|Location2.Y=1661.417mil|Absolute=True">Pad U8-8(1270.748mil,1651.772mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1590.945mil|Location2.Y=1610.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1590.945mil|Location2.Y=1610.236mil|Absolute=True">Pad U8-10(1270.748mil,1600.591mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1616.535mil|Location2.Y=1635.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1616.535mil|Location2.Y=1635.827mil|Absolute=True">Pad U8-9(1270.748mil,1626.181mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1565.354mil|Location2.Y=1584.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1565.354mil|Location2.Y=1584.646mil|Absolute=True">Pad U8-11(1270.748mil,1575mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1590.945mil|Location2.Y=1610.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1590.945mil|Location2.Y=1610.236mil|Absolute=True">Pad U8-10(1270.748mil,1600.591mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1539.764mil|Location2.Y=1559.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1539.764mil|Location2.Y=1559.055mil|Absolute=True">Pad U8-12(1270.748mil,1549.409mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1565.354mil|Location2.Y=1584.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1237.48mil|Location2.X=1304.016mil|Location1.Y=1565.354mil|Location2.Y=1584.646mil|Absolute=True">Pad U8-11(1270.748mil,1575mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1795.669mil|Location2.Y=1814.96mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1795.669mil|Location2.Y=1814.96mil|Absolute=True">Pad U8-23(1489.252mil,1805.315mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1821.26mil|Location2.Y=1840.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1821.26mil|Location2.Y=1840.551mil|Absolute=True">Pad U8-24(1489.252mil,1830.906mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1770.079mil|Location2.Y=1789.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1770.079mil|Location2.Y=1789.37mil|Absolute=True">Pad U8-22(1489.252mil,1779.724mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1795.669mil|Location2.Y=1814.96mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1795.669mil|Location2.Y=1814.96mil|Absolute=True">Pad U8-23(1489.252mil,1805.315mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1744.488mil|Location2.Y=1763.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1744.488mil|Location2.Y=1763.779mil|Absolute=True">Pad U8-21(1489.252mil,1754.134mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1770.079mil|Location2.Y=1789.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1770.079mil|Location2.Y=1789.37mil|Absolute=True">Pad U8-22(1489.252mil,1779.724mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1718.898mil|Location2.Y=1738.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1718.898mil|Location2.Y=1738.189mil|Absolute=True">Pad U8-20(1489.252mil,1728.543mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1744.488mil|Location2.Y=1763.779mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1744.488mil|Location2.Y=1763.779mil|Absolute=True">Pad U8-21(1489.252mil,1754.134mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1693.307mil|Location2.Y=1712.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1693.307mil|Location2.Y=1712.598mil|Absolute=True">Pad U8-19(1489.252mil,1702.953mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1718.898mil|Location2.Y=1738.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1718.898mil|Location2.Y=1738.189mil|Absolute=True">Pad U8-20(1489.252mil,1728.543mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1667.717mil|Location2.Y=1687.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1667.717mil|Location2.Y=1687.008mil|Absolute=True">Pad U8-18(1489.252mil,1677.362mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1693.307mil|Location2.Y=1712.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1693.307mil|Location2.Y=1712.598mil|Absolute=True">Pad U8-19(1489.252mil,1702.953mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1642.126mil|Location2.Y=1661.417mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1642.126mil|Location2.Y=1661.417mil|Absolute=True">Pad U8-17(1489.252mil,1651.772mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1667.717mil|Location2.Y=1687.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1667.717mil|Location2.Y=1687.008mil|Absolute=True">Pad U8-18(1489.252mil,1677.362mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1616.535mil|Location2.Y=1635.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1616.535mil|Location2.Y=1635.827mil|Absolute=True">Pad U8-16(1489.252mil,1626.181mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1642.126mil|Location2.Y=1661.417mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1642.126mil|Location2.Y=1661.417mil|Absolute=True">Pad U8-17(1489.252mil,1651.772mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1590.945mil|Location2.Y=1610.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1590.945mil|Location2.Y=1610.236mil|Absolute=True">Pad U8-15(1489.252mil,1600.591mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1616.535mil|Location2.Y=1635.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1616.535mil|Location2.Y=1635.827mil|Absolute=True">Pad U8-16(1489.252mil,1626.181mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1565.354mil|Location2.Y=1584.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1565.354mil|Location2.Y=1584.646mil|Absolute=True">Pad U8-14(1489.252mil,1575mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1590.945mil|Location2.Y=1610.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1590.945mil|Location2.Y=1610.236mil|Absolute=True">Pad U8-15(1489.252mil,1600.591mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1539.764mil|Location2.Y=1559.055mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1539.764mil|Location2.Y=1559.055mil|Absolute=True">Pad U8-13(1489.252mil,1549.409mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1565.354mil|Location2.Y=1584.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\Level_Translation.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1455.984mil|Location2.X=1522.52mil|Location1.Y=1565.354mil|Location2.Y=1584.646mil|Absolute=True">Pad U8-14(1489.252mil,1575mil)  Top Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>

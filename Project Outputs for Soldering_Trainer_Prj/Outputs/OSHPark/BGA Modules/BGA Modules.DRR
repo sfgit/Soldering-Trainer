@@ -1,0 +1,14 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: BGA Modules.PcbDoc   10/22/2015  10:25:35 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : BGA Modules.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        13mil (0.3302mm)         Round          8                0.59 Inch (15.11 mm)
+---------------------------------------------------------------------------
+Totals                                            8                0.59 Inch (15.11 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

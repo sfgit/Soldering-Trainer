@@ -1,0 +1,46 @@
+Removed Pin From Net: NetName=GND Pin=LED1-2
+Removed Pin From Net: NetName=GND Pin=LED2-2
+Removed Pin From Net: NetName=GND Pin=LED3-2
+Removed Pin From Net: NetName=GND Pin=LED4-2
+Removed Pin From Net: NetName=GND Pin=LED5-2
+Removed Pin From Net: NetName=GND Pin=LED6-2
+Removed Pin From Net: NetName=GND Pin=LED7-2
+Removed Pin From Net: NetName=GND Pin=LED8-2
+Removed Pin From Net: NetName=GND Pin=P3-1
+Removed Pin From Net: NetName=GND Pin=P3-2
+Removed Pin From Net: NetName=GND Pin=P3-3
+Removed Pin From Net: NetName=GND Pin=P3-4
+Removed Pin From Net: NetName=GND Pin=P3-5
+Removed Pin From Net: NetName=GND Pin=P3-6
+Removed Pin From Net: NetName=GND Pin=P3-7
+Removed Pin From Net: NetName=GND Pin=P3-8
+Removed Pin From Net: NetName=GND Pin=P3-9
+Removed Pin From Net: NetName=GND Pin=P3-10
+Removed Pin From Net: NetName=GND Pin=P3-11
+Removed Pin From Net: NetName=GND Pin=P3-12
+Added Component: Designator=C35(CAPC0402(1005)60_L)
+Added Pin To Net: NetName=GND Pin=C35-1
+Added Pin To Net: NetName=5V0 Pin=C35-2
+Added Net: Name=5V0
+Added Net: Name=ALT_DONE
+Added Net: Name=ALT_DONEX
+Added Net: Name=ARD_D0(RX)
+Added Net: Name=ARD_D0(RX)X
+Added Net: Name=ARD_D1(TX)
+Added Net: Name=ARD_D1(TX)X
+Added Net: Name=ARD_D7
+Added Net: Name=ARD_D7X
+Added Net: Name=DONE_ARD
+Added Net: Name=DONE_ARDX
+Added Net: Name=MISO_ARD
+Added Net: Name=MISO_ARDX
+Added Net: Name=MOSI_ARD
+Added Net: Name=MOSI_ARDX
+Added Net: Name=MUX_SEL
+Added Net: Name=MUX_SELX
+Added Net: Name=PROGRAM_B
+Added Net: Name=PROGRAM_BX
+Added Net: Name=SCLK_ARD
+Added Net: Name=SCLK_ARDX
+Added Class: Name=Level_Translation
+Added Room: Name=Level_Translation

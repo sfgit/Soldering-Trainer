@@ -1,0 +1,168 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc
+Date     : 10/22/2015
+Time     : 10:07:07 PM
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+   Violation between Text "R8" (1860mil,2753mil)  Top Overlay and 
+                     Track (1865.314mil,2797.401mil)(1904.684mil,2797.401mil)  Top Overlay
+   Violation between Text "R8" (1860mil,2753mil)  Top Overlay and 
+                     Track (1865.314mil,2738.345mil)(1904.684mil,2738.345mil)  Top Overlay
+   Violation between Text "LED1" (1615mil,1545mil)  Top Overlay and 
+                     Track (1645.316mil,1530.472mil)(1684.686mil,1530.472mil)  Top Overlay
+   Violation between Text "LED1" (1615mil,1545mil)  Top Overlay and 
+                     Track (1645.316mil,1589.528mil)(1684.686mil,1589.528mil)  Top Overlay
+   Violation between Text "LED2" (1610mil,1716mil)  Top Overlay and 
+                     Track (1645.316mil,1701.9mil)(1684.686mil,1701.9mil)  Top Overlay
+   Violation between Text "LED2" (1610mil,1716mil)  Top Overlay and 
+                     Track (1645.316mil,1760.956mil)(1684.686mil,1760.956mil)  Top Overlay
+   Violation between Text "LED3" (1610mil,1888mil)  Top Overlay and 
+                     Track (1645.316mil,1873.33mil)(1684.686mil,1873.33mil)  Top Overlay
+   Violation between Text "LED3" (1610mil,1888mil)  Top Overlay and 
+                     Track (1645.316mil,1932.384mil)(1684.686mil,1932.384mil)  Top Overlay
+   Violation between Text "LED4" (1610mil,2059mil)  Top Overlay and 
+                     Track (1645.316mil,2044.758mil)(1684.686mil,2044.758mil)  Top Overlay
+   Violation between Text "LED4" (1610mil,2059mil)  Top Overlay and 
+                     Track (1645.316mil,2103.814mil)(1684.686mil,2103.814mil)  Top Overlay
+   Violation between Text "LED5" (1610mil,2231mil)  Top Overlay and 
+                     Track (1645.316mil,2216.186mil)(1684.686mil,2216.186mil)  Top Overlay
+   Violation between Text "LED5" (1610mil,2231mil)  Top Overlay and 
+                     Track (1645.316mil,2275.242mil)(1684.686mil,2275.242mil)  Top Overlay
+   Violation between Text "LED6" (1610mil,2402mil)  Top Overlay and 
+                     Track (1645.316mil,2387.614mil)(1684.686mil,2387.614mil)  Top Overlay
+   Violation between Text "LED6" (1610mil,2402mil)  Top Overlay and 
+                     Track (1645.316mil,2446.67mil)(1684.686mil,2446.67mil)  Top Overlay
+   Violation between Text "LED7" (1610mil,2574mil)  Top Overlay and 
+                     Track (1645.316mil,2559.044mil)(1684.686mil,2559.044mil)  Top Overlay
+   Violation between Text "LED7" (1610mil,2574mil)  Top Overlay and 
+                     Track (1645.316mil,2618.098mil)(1684.686mil,2618.098mil)  Top Overlay
+   Violation between Text "LED8" (1610mil,2745mil)  Top Overlay and 
+                     Track (1645.316mil,2730.472mil)(1684.686mil,2730.472mil)  Top Overlay
+   Violation between Text "LED8" (1610mil,2745mil)  Top Overlay and 
+                     Track (1645.316mil,2789.528mil)(1684.686mil,2789.528mil)  Top Overlay
+   Violation between Text "R1" (1860mil,1595mil)  Top Overlay and 
+                     Track (1865.314mil,1581.654mil)(1904.684mil,1581.654mil)  Top Overlay
+   Violation between Text "R2" (1860mil,1709mil)  Top Overlay and 
+                     Track (1865.314mil,1753.082mil)(1904.684mil,1753.082mil)  Top Overlay
+   Violation between Text "R2" (1860mil,1709mil)  Top Overlay and 
+                     Track (1865.314mil,1694.026mil)(1904.684mil,1694.026mil)  Top Overlay
+   Violation between Text "R3" (1860mil,1880mil)  Top Overlay and 
+                     Track (1865.314mil,1924.511mil)(1904.684mil,1924.511mil)  Top Overlay
+   Violation between Text "R3" (1860mil,1880mil)  Top Overlay and 
+                     Track (1865.314mil,1865.455mil)(1904.684mil,1865.455mil)  Top Overlay
+   Violation between Text "R4" (1860mil,2051mil)  Top Overlay and 
+                     Track (1865.314mil,2095.939mil)(1904.684mil,2095.939mil)  Top Overlay
+   Violation between Text "R4" (1860mil,2051mil)  Top Overlay and 
+                     Track (1865.314mil,2036.883mil)(1904.684mil,2036.883mil)  Top Overlay
+   Violation between Text "R5" (1860mil,2239mil)  Top Overlay and 
+                     Track (1865.314mil,2283.116mil)(1904.684mil,2283.116mil)  Top Overlay
+   Violation between Text "R5" (1860mil,2239mil)  Top Overlay and 
+                     Track (1865.314mil,2224.06mil)(1904.684mil,2224.06mil)  Top Overlay
+   Violation between Text "R6" (1860mil,2410mil)  Top Overlay and 
+                     Track (1865.314mil,2454.544mil)(1904.684mil,2454.544mil)  Top Overlay
+   Violation between Text "R6" (1860mil,2410mil)  Top Overlay and 
+                     Track (1865.314mil,2395.488mil)(1904.684mil,2395.488mil)  Top Overlay
+   Violation between Text "R7" (1860mil,2581mil)  Top Overlay and 
+                     Track (1865.314mil,2625.973mil)(1904.684mil,2625.973mil)  Top Overlay
+   Violation between Text "R7" (1860mil,2581mil)  Top Overlay and 
+                     Track (1865.314mil,2566.917mil)(1904.684mil,2566.917mil)  Top Overlay
+Rule Violations :31
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Violation between Text "J1" (2065mil,2385mil)  Top Overlay and 
+                     Pad J1-9(2080mil,2410mil)  Multi-Layer
+   Violation between Text "R8" (1860mil,2753mil)  Top Overlay and 
+                     Pad R8-1(1831.85mil,2767.873mil)  Top Layer
+   Violation between Text "R8" (1860mil,2753mil)  Top Overlay and 
+                     Pad R8-2(1938.15mil,2767.873mil)  Top Layer
+   Violation between Text "LED1" (1615mil,1545mil)  Top Overlay and 
+                     Pad LED1-1(1718.15mil,1560mil)  Top Layer
+   Violation between Text "LED1" (1615mil,1545mil)  Top Overlay and 
+                     Pad LED1-2(1611.85mil,1560mil)  Top Layer
+   Violation between Text "LED2" (1610mil,1716mil)  Top Overlay and 
+                     Pad LED2-1(1718.15mil,1731.428mil)  Top Layer
+   Violation between Text "LED2" (1610mil,1716mil)  Top Overlay and 
+                     Pad LED2-2(1611.85mil,1731.428mil)  Top Layer
+   Violation between Text "LED3" (1610mil,1888mil)  Top Overlay and 
+                     Pad LED3-1(1718.15mil,1902.858mil)  Top Layer
+   Violation between Text "LED3" (1610mil,1888mil)  Top Overlay and 
+                     Pad LED3-2(1611.85mil,1902.858mil)  Top Layer
+   Violation between Text "LED4" (1610mil,2059mil)  Top Overlay and 
+                     Pad LED4-1(1718.15mil,2074.286mil)  Top Layer
+   Violation between Text "LED4" (1610mil,2059mil)  Top Overlay and 
+                     Pad LED4-2(1611.85mil,2074.286mil)  Top Layer
+   Violation between Text "LED5" (1610mil,2231mil)  Top Overlay and 
+                     Pad LED5-1(1718.15mil,2245.714mil)  Top Layer
+   Violation between Text "LED5" (1610mil,2231mil)  Top Overlay and 
+                     Pad LED5-2(1611.85mil,2245.714mil)  Top Layer
+   Violation between Text "LED6" (1610mil,2402mil)  Top Overlay and 
+                     Pad LED6-1(1718.15mil,2417.142mil)  Top Layer
+   Violation between Text "LED6" (1610mil,2402mil)  Top Overlay and 
+                     Pad LED6-2(1611.85mil,2417.142mil)  Top Layer
+   Violation between Text "LED7" (1610mil,2574mil)  Top Overlay and 
+                     Pad LED7-1(1718.15mil,2588.572mil)  Top Layer
+   Violation between Text "LED7" (1610mil,2574mil)  Top Overlay and 
+                     Pad LED7-2(1611.85mil,2588.572mil)  Top Layer
+   Violation between Text "LED8" (1610mil,2745mil)  Top Overlay and 
+                     Pad LED8-1(1718.15mil,2760mil)  Top Layer
+   Violation between Text "LED8" (1610mil,2745mil)  Top Overlay and 
+                     Pad LED8-2(1611.85mil,2760mil)  Top Layer
+   Violation between Text "R2" (1860mil,1709mil)  Top Overlay and 
+                     Pad R2-1(1831.85mil,1723.554mil)  Top Layer
+   Violation between Text "R2" (1860mil,1709mil)  Top Overlay and 
+                     Pad R2-2(1938.15mil,1723.554mil)  Top Layer
+   Violation between Text "R3" (1860mil,1880mil)  Top Overlay and 
+                     Pad R3-1(1831.85mil,1894.983mil)  Top Layer
+   Violation between Text "R3" (1860mil,1880mil)  Top Overlay and 
+                     Pad R3-2(1938.15mil,1894.983mil)  Top Layer
+   Violation between Text "R4" (1860mil,2051mil)  Top Overlay and 
+                     Pad R4-1(1831.85mil,2066.411mil)  Top Layer
+   Violation between Text "R4" (1860mil,2051mil)  Top Overlay and 
+                     Pad R4-2(1938.15mil,2066.411mil)  Top Layer
+   Violation between Text "R5" (1860mil,2239mil)  Top Overlay and 
+                     Pad R5-1(1831.85mil,2253.588mil)  Top Layer
+   Violation between Text "R5" (1860mil,2239mil)  Top Overlay and 
+                     Pad R5-2(1938.15mil,2253.588mil)  Top Layer
+   Violation between Text "R6" (1860mil,2410mil)  Top Overlay and 
+                     Pad R6-1(1831.85mil,2425.016mil)  Top Layer
+   Violation between Text "R6" (1860mil,2410mil)  Top Overlay and 
+                     Pad R6-2(1938.15mil,2425.016mil)  Top Layer
+   Violation between Text "R7" (1860mil,2581mil)  Top Overlay and 
+                     Pad R7-1(1831.85mil,2596.445mil)  Top Layer
+   Violation between Text "R7" (1860mil,2581mil)  Top Overlay and 
+                     Pad R7-2(1938.15mil,2596.445mil)  Top Layer
+Rule Violations :31
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=7mil) (Max=20mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+
+Violations Detected : 62
+Time Elapsed        : 00:00:00

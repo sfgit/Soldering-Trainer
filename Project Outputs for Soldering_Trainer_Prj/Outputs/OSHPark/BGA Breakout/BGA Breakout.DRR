@@ -1,0 +1,14 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: BGA Breakout.PcbDoc   10/22/2015  9:12:21 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : BGA Breakout.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        43mil (1.0922mm)         Round          24               2.80 Inch (71.12 mm)
+---------------------------------------------------------------------------
+Totals                                            24               2.80 Inch (71.12 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

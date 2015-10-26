@@ -1,0 +1,227 @@
+*************************************************************
+FileName = BGA Breakout.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : BGA Breakout.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : BGA Breakout.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : BGA Breakout.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : BGA Breakout.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : BGA Breakout.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : BGA Breakout.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : BGA Breakout.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : BGA Breakout.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : BGA Breakout.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : BGA Breakout.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D17
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : BGA Breakout.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D19
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 2
+      File : BGA Breakout.GM2
+
+    Adding Layer      : Mechanical 2
+
+
+Used DCodes :
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 7
+      File : BGA Breakout.GM7
+
+    Adding Layer      : Mechanical 7
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : BGA Breakout.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : BGA Breakout.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D21
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : BGA Breakout.GD1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D22
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : BGA Breakout.GG1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D22
+*************************************************************
+

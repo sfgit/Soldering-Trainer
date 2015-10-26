@@ -239,183 +239,987 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 
+[Document14]
+DocumentPath=BGA Breakout.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+
+[Document15]
+DocumentPath=CAM - BGA Breakout.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+
+[Document16]
+DocumentPath=CAM - BGA Breakout Gerber + NCD.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+
+[Document17]
+DocumentPath=BGA Modules.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+
+[Document18]
+DocumentPath=LED Breakout Board.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+
+[Document19]
+DocumentPath=BB Power Supply.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\comp_+_bot\components
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - BB Power Supply\BB Power Supply.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\comp_+_top\components
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\eda\data
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\bottom\features
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\bottomoverlay\features
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\bottompaste\features
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\bottomsolder\features
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\comp_+_bot\features
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\comp_+_top\features
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\drill\features
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\keepout\features
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\top\features
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\topoverlay\features
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\toppaste\features
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\topsolder\features
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\matrix\matrix
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\netlists\cadnet\netlist
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\profile
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill\Soldering_Trainer_PCB-RoundHoles.TXT
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill\Soldering_Trainer_PCB-SlotHoles.TXT
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GM7
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill\Soldering_Trainer_PCB.DRR
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GM7
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.EXTREP
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GBL
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GBO
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument25]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GBP
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument26]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GBS
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument27]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GD1
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument28]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GG1
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GM1
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument30]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GM2
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument31]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GM7
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument32]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GM13
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument33]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GM15
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument34]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GPB
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument35]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GPT
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument36]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GTL
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument37]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GTO
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument38]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GTP
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - BB Power Supply\BB Power Supply.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument39]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.GTS
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.REP
 DItemRevisionGUID=
 
 [GeneratedDocument40]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill\Soldering_Trainer_PCB.LDP
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.REP
 DItemRevisionGUID=
 
 [GeneratedDocument41]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.REP
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\BB Power Supply.REP
 DItemRevisionGUID=
 
 [GeneratedDocument42]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\Soldering_Trainer_PCB.REP
+DocumentPath=Outputs\Gerber - BB Power Supply\BB Power Supply.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument43]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.RUL
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BB Power Supply\BB Power Supply.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument44]
-DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\stephdr
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - BB Power Supply\BB Power Supply.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument45]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - BGA Breakout\BGA Breakout.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument46]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill\BGA Breakout.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument47]
+DocumentPath=Outputs\Gerber\BGA Breakout.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument48]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument49]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument50]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument51]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument52]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument53]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument54]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument55]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument56]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument57]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GM7
+DItemRevisionGUID=
+
+[GeneratedDocument58]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument59]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument60]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument61]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument62]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument63]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument64]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument65]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument66]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - BGA Breakout\BGA Breakout.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument67]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill\BGA Breakout.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument68]
+DocumentPath=Outputs\Gerber\BGA Breakout.REP
+DItemRevisionGUID=
+
+[GeneratedDocument69]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.REP
+DItemRevisionGUID=
+
+[GeneratedDocument70]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\BGA Breakout.REP
+DItemRevisionGUID=
+
+[GeneratedDocument71]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\BGA Breakout.REP
+DItemRevisionGUID=
+
+[GeneratedDocument72]
+DocumentPath=Outputs\Gerber\BGA Breakout.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument73]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Breakout\BGA Breakout.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument74]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - BGA Breakout\BGA Breakout.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument75]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - BGA Modules\BGA Modules.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument76]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument77]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument78]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument79]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument80]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument81]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument82]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument83]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument84]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument85]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GM7
+DItemRevisionGUID=
+
+[GeneratedDocument86]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument87]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument88]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument89]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument90]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument91]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument92]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument93]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument94]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - BGA Modules\BGA Modules.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument95]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.REP
+DItemRevisionGUID=
+
+[GeneratedDocument96]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\BGA Modules.REP
+DItemRevisionGUID=
+
+[GeneratedDocument97]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - BGA Modules\BGA Modules.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument98]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - BGA Modules\BGA Modules.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument99]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\comp_+_top\components
+DItemRevisionGUID=
+
+[GeneratedDocument100]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\comp_+_bot\components
+DItemRevisionGUID=
+
+[GeneratedDocument101]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\comp_+_top\components
+DItemRevisionGUID=
+
+[GeneratedDocument102]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\comp_+_top\components
+DItemRevisionGUID=
+
+[GeneratedDocument103]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\comp_+_top\components
+DItemRevisionGUID=
+
+[GeneratedDocument104]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\comp_+_bot\components
+DItemRevisionGUID=
+
+[GeneratedDocument105]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\comp_+_top\components
+DItemRevisionGUID=
+
+[GeneratedDocument106]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\eda\data
+DItemRevisionGUID=
+
+[GeneratedDocument107]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\eda\data
+DItemRevisionGUID=
+
+[GeneratedDocument108]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\eda\data
+DItemRevisionGUID=
+
+[GeneratedDocument109]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\eda\data
+DItemRevisionGUID=
+
+[GeneratedDocument110]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\eda\data
+DItemRevisionGUID=
+
+[GeneratedDocument111]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument112]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\bottomoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument113]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\bottompaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument114]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\bottomsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument115]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\comp_+_top\features
+DItemRevisionGUID=
+
+[GeneratedDocument116]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\drill\features
+DItemRevisionGUID=
+
+[GeneratedDocument117]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\keepout\features
+DItemRevisionGUID=
+
+[GeneratedDocument118]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\top\features
+DItemRevisionGUID=
+
+[GeneratedDocument119]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\topoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument120]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\toppaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument121]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\topsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument122]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument123]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\bottomoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument124]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\bottompaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument125]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\bottomsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument126]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\comp_+_bot\features
+DItemRevisionGUID=
+
+[GeneratedDocument127]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\comp_+_top\features
+DItemRevisionGUID=
+
+[GeneratedDocument128]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\drill\features
+DItemRevisionGUID=
+
+[GeneratedDocument129]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\keepout\features
+DItemRevisionGUID=
+
+[GeneratedDocument130]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\top\features
+DItemRevisionGUID=
+
+[GeneratedDocument131]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\topoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument132]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\toppaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument133]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\topsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument134]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument135]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\bottomoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument136]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\bottompaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument137]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\bottomsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument138]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\comp_+_top\features
+DItemRevisionGUID=
+
+[GeneratedDocument139]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\drill\features
+DItemRevisionGUID=
+
+[GeneratedDocument140]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\keepout\features
+DItemRevisionGUID=
+
+[GeneratedDocument141]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\top\features
+DItemRevisionGUID=
+
+[GeneratedDocument142]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\topoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument143]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\toppaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument144]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\topsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument145]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument146]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\bottomoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument147]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\bottompaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument148]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\bottomsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument149]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\comp_+_top\features
+DItemRevisionGUID=
+
+[GeneratedDocument150]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\drill\features
+DItemRevisionGUID=
+
+[GeneratedDocument151]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\keepout\features
+DItemRevisionGUID=
+
+[GeneratedDocument152]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\top\features
+DItemRevisionGUID=
+
+[GeneratedDocument153]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\topoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument154]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\toppaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument155]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\topsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument156]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\bottom\features
+DItemRevisionGUID=
+
+[GeneratedDocument157]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\bottomoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument158]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\bottompaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument159]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\bottomsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument160]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\comp_+_bot\features
+DItemRevisionGUID=
+
+[GeneratedDocument161]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\comp_+_top\features
+DItemRevisionGUID=
+
+[GeneratedDocument162]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\drill\features
+DItemRevisionGUID=
+
+[GeneratedDocument163]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\keepout\features
+DItemRevisionGUID=
+
+[GeneratedDocument164]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\top\features
+DItemRevisionGUID=
+
+[GeneratedDocument165]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\topoverlay\features
+DItemRevisionGUID=
+
+[GeneratedDocument166]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\toppaste\features
+DItemRevisionGUID=
+
+[GeneratedDocument167]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\topsolder\features
+DItemRevisionGUID=
+
+[GeneratedDocument168]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - LED Breakout\LED Breakout Board.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument169]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument170]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument171]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument172]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument173]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument174]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument175]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument176]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument177]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument178]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GM7
+DItemRevisionGUID=
+
+[GeneratedDocument179]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument180]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument181]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument182]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument183]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument184]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument185]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument186]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument187]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - LED Breakout\LED Breakout Board.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument188]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.REP
+DItemRevisionGUID=
+
+[GeneratedDocument189]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\LED Breakout Board.REP
+DItemRevisionGUID=
+
+[GeneratedDocument190]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber - LED Breakout\LED Breakout Board.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument191]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill - LED Breakout\LED Breakout Board.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument192]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\matrix\matrix
+DItemRevisionGUID=
+
+[GeneratedDocument193]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\matrix\matrix
+DItemRevisionGUID=
+
+[GeneratedDocument194]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\matrix\matrix
+DItemRevisionGUID=
+
+[GeneratedDocument195]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\matrix\matrix
+DItemRevisionGUID=
+
+[GeneratedDocument196]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\matrix\matrix
+DItemRevisionGUID=
+
+[GeneratedDocument197]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument198]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument199]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument200]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument201]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument202]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument203]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument204]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument205]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument206]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument207]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill\Soldering_Trainer_PCB.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument208]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument209]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\NC Drill\Soldering_Trainer_PCB.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument210]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument211]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\Soldering_Trainer_PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument212]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\Gerber\Soldering_Trainer_PCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument213]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument214]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument215]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument216]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument217]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument218]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BB Power Supply\odb\steps\pcb\layers\drill\tools
+DItemRevisionGUID=
+
+[GeneratedDocument219]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Breakout\odb\steps\pcb\layers\drill\tools
+DItemRevisionGUID=
+
+[GeneratedDocument220]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - BGA Modules\odb\steps\pcb\layers\drill\tools
+DItemRevisionGUID=
+
+[GeneratedDocument221]
+DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB - LED Breakout\odb\steps\pcb\layers\drill\tools
+DItemRevisionGUID=
+
+[GeneratedDocument222]
 DocumentPath=Project Outputs for Soldering_Trainer_Prj\Outputs\ODB\odb\steps\pcb\layers\drill\tools
 DItemRevisionGUID=
 

@@ -1,6 +1,6 @@
-Output: ODB++ Files
+Output: ODB - BB Power Supply
 Type  : ODB
-From  : Variant [[No Variations]] of PCB Document [Soldering_Trainer_PCB.PcbDoc]
+From  : Variant [[No Variations]] of PCB Document [BB Power Supply.PcbDoc]
    Generated File[matrix]
    Generated File[profile]
    Generated File[stephdr]
@@ -17,14 +17,12 @@ From  : Variant [[No Variations]] of PCB Document [Soldering_Trainer_PCB.PcbDoc]
    Generated File[features]
    Generated File[features]
    Generated File[components]
-   Generated File[features]
-   Generated File[components]
    Generated File[data]
    Generated File[netlist]
-   Generated File[Soldering_Trainer_PCB.REP]
+   Generated File[BB Power Supply.REP]
 
 
-Files Generated   : 21
+Files Generated   : 19
 Documents Printed : 0
 
-Finished Output Generation At 8:43:29 AM On 9/25/2015
+Finished Output Generation At 10:16:52 AM On 10/23/2015

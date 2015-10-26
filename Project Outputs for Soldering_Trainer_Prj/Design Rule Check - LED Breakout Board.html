@@ -1,0 +1,588 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body {
+			font-family : verdana;
+		}
+		td, th {
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;
+		}
+		th {
+			background-color : #A6CAF0;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+		}
+		
+		.DRC_summary_header {							
+			padding-bottom : 0.1em;
+			border : 0px solid black;							
+			width: 100%;
+                        align: right;
+                        
+		}
+
+		.DRC_summary_header_col1, 
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3
+		{
+			color : black;
+			font-size:150%;
+                        padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2: 0em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top;
+			font-weight: bold;				
+		}
+		
+		.DRC_summary_header_col1 	
+		{		                       
+			text-align: right;
+                        width: auto;	
+		}
+
+		.DRC_summary_header_col2 	
+		{		
+			text-align: center;	
+		}
+
+		.DRC_summary_header_col3 	
+		{		
+			text-align: left;	
+		}
+
+
+		
+		.header_holder
+		{
+		Width = 100%;
+		border = 0px solid green;
+		padding = 0;
+		}
+		
+		
+		
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+			left:0;
+			top:0;
+			padding-top : 0.1em;			
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top
+
+		}
+		.front_matter {	
+			
+			margin-top: 5px;
+ 			margin-left: 0px;					 			
+ 			horizontal-align: left;
+		}
+				
+		
+		.front_matter_column1 {
+			width : 10em;	
+			text-align  : right;
+			padding-right:0.1em;
+			
+		}
+		
+		.front_matter_column2 {
+                        width: 0.1em;
+			align: center;
+			text-align : center;
+			margin-right  : 0.1em;	
+			margin-left   : 0.1em;
+		}
+		.front_matter_column3 {
+			width         : auto;  
+			text-align    : left;	
+			margin-right  : 0.5em;				
+		}
+		
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD13\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td Style="width:70%">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">10/22/2015</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">10:07:07 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc" class="file"><acronym title="C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc">C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td Style="Width:30%">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3" style="color : red">62</td></tr>
+</table>
+</td>
+</table>
+<hr><a name="IDLHYBQPUO2W5HPHJACC4RKQIFVPH3EIF2MOLHKI4WXFLPSJ30LCN"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCLJZEOF0HI24FLKB42M2NY1HBAL3GI5IPSXX2KN3UJYVEX5H4IF">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGDKN2ZG3PEZ4GOPM55JIRHKR2MW54T2HUYYVZBLPG5KKAPQDYSZH">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">31</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4TC3LM35C5DTGKJEA2BM4PB54JOIRSLARNAYP0JAOURICRXW4EUF">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">31</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNPNXYDAPSX4EETK04GJQSX4GZISJICGLRFQ00LMIV53BMOEJPSIL">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDP0XGYWARO1KANI42TZCTD41VPHVK0I532H2IYEDOVDMB0CL4U3BB">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDG2AH03HTI0WHMOIQESQHS4GZPNY1UGDC4V3PR5NNWEMV4TQ52BJE">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOYT34UDJBZXRY5CI1GZ5Q54QJYWARSM53OGAIBAGKTBUD5OD3KG">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5OQJGZWTASPFKB1LDAFPPSMCNV00OTPJVYLHROCYQG23GSWWMAC">Width Constraint (Min=7mil) (Max=20mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDILLVVPTDIJZHGTAPPDR3HZXZD5H0U3TOQSPROLEGN5DLM3XT0BB">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDH2FYB5VXQB3RI3IGVTHAZY303GAUAOZNOTISYCNFBDKB3CN2Q1QK">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDY5PKRJUZXIQZOE2QB1UC22KJBBDCY3MRI4DIPRFBT0P1KQ4KLAFC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNZ3KGXNDF5ACBKRLT1NZVL0XAEFJNO3OM1HX2UMIPZV2VKJFO3KL">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">62</td>
+</tr>
+</table><br><hr><a name="IDGDKN2ZG3PEZ4GOPM55JIRHKR2MW54T2HUYYVZBLPG5KKAPQDYSZH"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2747mil|Location2.Y=2788.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2747mil|Location2.Y=2788.99mil|Absolute=True">Text "R8" (1860mil,2753mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2793.464mil|Location2.Y=2801.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2793.464mil|Location2.Y=2801.338mil|Absolute=True">Track (1865.314mil,2797.401mil)(1904.684mil,2797.401mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2747mil|Location2.Y=2788.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2747mil|Location2.Y=2788.99mil|Absolute=True">Text "R8" (1860mil,2753mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2734.408mil|Location2.Y=2742.282mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2734.408mil|Location2.Y=2742.282mil|Absolute=True">Track (1865.314mil,2738.345mil)(1904.684mil,2738.345mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1609mil|Location2.X=1720.968mil|Location1.Y=1539mil|Location2.Y=1580.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1609mil|Location2.X=1720.968mil|Location1.Y=1539mil|Location2.Y=1580.99mil|Absolute=True">Text "LED1" (1615mil,1545mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1526.535mil|Location2.Y=1534.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1526.535mil|Location2.Y=1534.409mil|Absolute=True">Track (1645.316mil,1530.472mil)(1684.686mil,1530.472mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1609mil|Location2.X=1720.968mil|Location1.Y=1539mil|Location2.Y=1580.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1609mil|Location2.X=1720.968mil|Location1.Y=1539mil|Location2.Y=1580.99mil|Absolute=True">Text "LED1" (1615mil,1545mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1585.591mil|Location2.Y=1593.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1585.591mil|Location2.Y=1593.465mil|Absolute=True">Track (1645.316mil,1589.528mil)(1684.686mil,1589.528mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1710mil|Location2.Y=1751.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1710mil|Location2.Y=1751.99mil|Absolute=True">Text "LED2" (1610mil,1716mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1697.963mil|Location2.Y=1705.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1697.963mil|Location2.Y=1705.837mil|Absolute=True">Track (1645.316mil,1701.9mil)(1684.686mil,1701.9mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1710mil|Location2.Y=1751.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1710mil|Location2.Y=1751.99mil|Absolute=True">Text "LED2" (1610mil,1716mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1757.019mil|Location2.Y=1764.893mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1757.019mil|Location2.Y=1764.893mil|Absolute=True">Track (1645.316mil,1760.956mil)(1684.686mil,1760.956mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1882mil|Location2.Y=1923.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1882mil|Location2.Y=1923.99mil|Absolute=True">Text "LED3" (1610mil,1888mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1869.393mil|Location2.Y=1877.267mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1869.393mil|Location2.Y=1877.267mil|Absolute=True">Track (1645.316mil,1873.33mil)(1684.686mil,1873.33mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1882mil|Location2.Y=1923.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1882mil|Location2.Y=1923.99mil|Absolute=True">Text "LED3" (1610mil,1888mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1928.447mil|Location2.Y=1936.321mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=1928.447mil|Location2.Y=1936.321mil|Absolute=True">Track (1645.316mil,1932.384mil)(1684.686mil,1932.384mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2053mil|Location2.Y=2094.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2053mil|Location2.Y=2094.99mil|Absolute=True">Text "LED4" (1610mil,2059mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2040.821mil|Location2.Y=2048.695mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2040.821mil|Location2.Y=2048.695mil|Absolute=True">Track (1645.316mil,2044.758mil)(1684.686mil,2044.758mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2053mil|Location2.Y=2094.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2053mil|Location2.Y=2094.99mil|Absolute=True">Text "LED4" (1610mil,2059mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2099.877mil|Location2.Y=2107.751mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2099.877mil|Location2.Y=2107.751mil|Absolute=True">Track (1645.316mil,2103.814mil)(1684.686mil,2103.814mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2225mil|Location2.Y=2266.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2225mil|Location2.Y=2266.99mil|Absolute=True">Text "LED5" (1610mil,2231mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2212.249mil|Location2.Y=2220.123mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2212.249mil|Location2.Y=2220.123mil|Absolute=True">Track (1645.316mil,2216.186mil)(1684.686mil,2216.186mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2225mil|Location2.Y=2266.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2225mil|Location2.Y=2266.99mil|Absolute=True">Text "LED5" (1610mil,2231mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2271.305mil|Location2.Y=2279.179mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2271.305mil|Location2.Y=2279.179mil|Absolute=True">Track (1645.316mil,2275.242mil)(1684.686mil,2275.242mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2396mil|Location2.Y=2437.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2396mil|Location2.Y=2437.99mil|Absolute=True">Text "LED6" (1610mil,2402mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2383.677mil|Location2.Y=2391.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2383.677mil|Location2.Y=2391.551mil|Absolute=True">Track (1645.316mil,2387.614mil)(1684.686mil,2387.614mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2396mil|Location2.Y=2437.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2396mil|Location2.Y=2437.99mil|Absolute=True">Text "LED6" (1610mil,2402mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2442.733mil|Location2.Y=2450.607mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2442.733mil|Location2.Y=2450.607mil|Absolute=True">Track (1645.316mil,2446.67mil)(1684.686mil,2446.67mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2568mil|Location2.Y=2609.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2568mil|Location2.Y=2609.99mil|Absolute=True">Text "LED7" (1610mil,2574mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2555.107mil|Location2.Y=2562.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2555.107mil|Location2.Y=2562.981mil|Absolute=True">Track (1645.316mil,2559.044mil)(1684.686mil,2559.044mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2568mil|Location2.Y=2609.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2568mil|Location2.Y=2609.99mil|Absolute=True">Text "LED7" (1610mil,2574mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2614.161mil|Location2.Y=2622.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2614.161mil|Location2.Y=2622.035mil|Absolute=True">Track (1645.316mil,2618.098mil)(1684.686mil,2618.098mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2739mil|Location2.Y=2780.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2739mil|Location2.Y=2780.99mil|Absolute=True">Text "LED8" (1610mil,2745mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2726.535mil|Location2.Y=2734.409mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2726.535mil|Location2.Y=2734.409mil|Absolute=True">Track (1645.316mil,2730.472mil)(1684.686mil,2730.472mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2739mil|Location2.Y=2780.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2739mil|Location2.Y=2780.99mil|Absolute=True">Text "LED8" (1610mil,2745mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2785.591mil|Location2.Y=2793.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.379mil|Location2.X=1688.623mil|Location1.Y=2785.591mil|Location2.Y=2793.465mil|Absolute=True">Track (1645.316mil,2789.528mil)(1684.686mil,2789.528mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1905.987mil|Location1.Y=1589mil|Location2.Y=1630.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1905.987mil|Location1.Y=1589mil|Location2.Y=1630.99mil|Absolute=True">Text "R1" (1860mil,1595mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1577.717mil|Location2.Y=1585.591mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1577.717mil|Location2.Y=1585.591mil|Absolute=True">Track (1865.314mil,1581.654mil)(1904.684mil,1581.654mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1703mil|Location2.Y=1744.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1703mil|Location2.Y=1744.99mil|Absolute=True">Text "R2" (1860mil,1709mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1749.145mil|Location2.Y=1757.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1749.145mil|Location2.Y=1757.019mil|Absolute=True">Track (1865.314mil,1753.082mil)(1904.684mil,1753.082mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1703mil|Location2.Y=1744.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1703mil|Location2.Y=1744.99mil|Absolute=True">Text "R2" (1860mil,1709mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1690.089mil|Location2.Y=1697.963mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1690.089mil|Location2.Y=1697.963mil|Absolute=True">Track (1865.314mil,1694.026mil)(1904.684mil,1694.026mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1874mil|Location2.Y=1915.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1874mil|Location2.Y=1915.99mil|Absolute=True">Text "R3" (1860mil,1880mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1920.574mil|Location2.Y=1928.448mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1920.574mil|Location2.Y=1928.448mil|Absolute=True">Track (1865.314mil,1924.511mil)(1904.684mil,1924.511mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1874mil|Location2.Y=1915.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1874mil|Location2.Y=1915.99mil|Absolute=True">Text "R3" (1860mil,1880mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1861.518mil|Location2.Y=1869.392mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=1861.518mil|Location2.Y=1869.392mil|Absolute=True">Track (1865.314mil,1865.455mil)(1904.684mil,1865.455mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2045mil|Location2.Y=2086.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2045mil|Location2.Y=2086.99mil|Absolute=True">Text "R4" (1860mil,2051mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2092.002mil|Location2.Y=2099.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2092.002mil|Location2.Y=2099.876mil|Absolute=True">Track (1865.314mil,2095.939mil)(1904.684mil,2095.939mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2045mil|Location2.Y=2086.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2045mil|Location2.Y=2086.99mil|Absolute=True">Text "R4" (1860mil,2051mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2032.946mil|Location2.Y=2040.82mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2032.946mil|Location2.Y=2040.82mil|Absolute=True">Track (1865.314mil,2036.883mil)(1904.684mil,2036.883mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2233mil|Location2.Y=2274.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2233mil|Location2.Y=2274.99mil|Absolute=True">Text "R5" (1860mil,2239mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2279.179mil|Location2.Y=2287.053mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2279.179mil|Location2.Y=2287.053mil|Absolute=True">Track (1865.314mil,2283.116mil)(1904.684mil,2283.116mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2233mil|Location2.Y=2274.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2233mil|Location2.Y=2274.99mil|Absolute=True">Text "R5" (1860mil,2239mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2220.123mil|Location2.Y=2227.997mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2220.123mil|Location2.Y=2227.997mil|Absolute=True">Track (1865.314mil,2224.06mil)(1904.684mil,2224.06mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2404mil|Location2.Y=2445.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2404mil|Location2.Y=2445.99mil|Absolute=True">Text "R6" (1860mil,2410mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2450.607mil|Location2.Y=2458.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2450.607mil|Location2.Y=2458.481mil|Absolute=True">Track (1865.314mil,2454.544mil)(1904.684mil,2454.544mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2404mil|Location2.Y=2445.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2404mil|Location2.Y=2445.99mil|Absolute=True">Text "R6" (1860mil,2410mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2391.551mil|Location2.Y=2399.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2391.551mil|Location2.Y=2399.425mil|Absolute=True">Track (1865.314mil,2395.488mil)(1904.684mil,2395.488mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2575mil|Location2.Y=2616.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2575mil|Location2.Y=2616.99mil|Absolute=True">Text "R7" (1860mil,2581mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2622.036mil|Location2.Y=2629.91mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2622.036mil|Location2.Y=2629.91mil|Absolute=True">Track (1865.314mil,2625.973mil)(1904.684mil,2625.973mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2575mil|Location2.Y=2616.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2575mil|Location2.Y=2616.99mil|Absolute=True">Text "R7" (1860mil,2581mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2562.98mil|Location2.Y=2570.854mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1861.377mil|Location2.X=1908.621mil|Location1.Y=2562.98mil|Location2.Y=2570.854mil|Absolute=True">Track (1865.314mil,2566.917mil)(1904.684mil,2566.917mil)  Top Overlay</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="ID4TC3LM35C5DTGKJEA2BM4PB54JOIRSLARNAYP0JAOURICRXW4EUF"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2059mil|Location2.X=2110.987mil|Location1.Y=2379mil|Location2.Y=2420.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2059mil|Location2.X=2110.987mil|Location1.Y=2379mil|Location2.Y=2420.99mil|Absolute=True">Text "J1" (2065mil,2385mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2046.473mil|Location2.X=2113.528mil|Location1.Y=2376.472mil|Location2.Y=2443.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2046.473mil|Location2.X=2113.528mil|Location1.Y=2376.472mil|Location2.Y=2443.528mil|Absolute=True">Pad J1-9(2080mil,2410mil)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2747mil|Location2.Y=2788.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2747mil|Location2.Y=2788.99mil|Absolute=True">Text "R8" (1860mil,2753mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2730.409mil|Location2.Y=2805.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2730.409mil|Location2.Y=2805.338mil|Absolute=True">Pad R8-1(1831.85mil,2767.873mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2747mil|Location2.Y=2788.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2747mil|Location2.Y=2788.99mil|Absolute=True">Text "R8" (1860mil,2753mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2730.409mil|Location2.Y=2805.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2730.409mil|Location2.Y=2805.338mil|Absolute=True">Pad R8-2(1938.15mil,2767.873mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1609mil|Location2.X=1720.968mil|Location1.Y=1539mil|Location2.Y=1580.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1609mil|Location2.X=1720.968mil|Location1.Y=1539mil|Location2.Y=1580.99mil|Absolute=True">Text "LED1" (1615mil,1545mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=1522.535mil|Location2.Y=1597.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=1522.535mil|Location2.Y=1597.465mil|Absolute=True">Pad LED1-1(1718.15mil,1560mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1609mil|Location2.X=1720.968mil|Location1.Y=1539mil|Location2.Y=1580.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1609mil|Location2.X=1720.968mil|Location1.Y=1539mil|Location2.Y=1580.99mil|Absolute=True">Text "LED1" (1615mil,1545mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=1522.535mil|Location2.Y=1597.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=1522.535mil|Location2.Y=1597.465mil|Absolute=True">Pad LED1-2(1611.85mil,1560mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1710mil|Location2.Y=1751.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1710mil|Location2.Y=1751.99mil|Absolute=True">Text "LED2" (1610mil,1716mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=1693.964mil|Location2.Y=1768.892mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=1693.964mil|Location2.Y=1768.892mil|Absolute=True">Pad LED2-1(1718.15mil,1731.428mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1710mil|Location2.Y=1751.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1710mil|Location2.Y=1751.99mil|Absolute=True">Text "LED2" (1610mil,1716mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=1693.964mil|Location2.Y=1768.892mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=1693.964mil|Location2.Y=1768.892mil|Absolute=True">Pad LED2-2(1611.85mil,1731.428mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1882mil|Location2.Y=1923.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1882mil|Location2.Y=1923.99mil|Absolute=True">Text "LED3" (1610mil,1888mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=1865.393mil|Location2.Y=1940.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=1865.393mil|Location2.Y=1940.322mil|Absolute=True">Pad LED3-1(1718.15mil,1902.858mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1882mil|Location2.Y=1923.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=1882mil|Location2.Y=1923.99mil|Absolute=True">Text "LED3" (1610mil,1888mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=1865.393mil|Location2.Y=1940.322mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=1865.393mil|Location2.Y=1940.322mil|Absolute=True">Pad LED3-2(1611.85mil,1902.858mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2053mil|Location2.Y=2094.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2053mil|Location2.Y=2094.99mil|Absolute=True">Text "LED4" (1610mil,2059mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2036.822mil|Location2.Y=2111.751mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2036.822mil|Location2.Y=2111.751mil|Absolute=True">Pad LED4-1(1718.15mil,2074.286mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2053mil|Location2.Y=2094.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2053mil|Location2.Y=2094.99mil|Absolute=True">Text "LED4" (1610mil,2059mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2036.822mil|Location2.Y=2111.751mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2036.822mil|Location2.Y=2111.751mil|Absolute=True">Pad LED4-2(1611.85mil,2074.286mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2225mil|Location2.Y=2266.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2225mil|Location2.Y=2266.99mil|Absolute=True">Text "LED5" (1610mil,2231mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2208.249mil|Location2.Y=2283.178mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2208.249mil|Location2.Y=2283.178mil|Absolute=True">Pad LED5-1(1718.15mil,2245.714mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2225mil|Location2.Y=2266.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2225mil|Location2.Y=2266.99mil|Absolute=True">Text "LED5" (1610mil,2231mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2208.249mil|Location2.Y=2283.178mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2208.249mil|Location2.Y=2283.178mil|Absolute=True">Pad LED5-2(1611.85mil,2245.714mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2396mil|Location2.Y=2437.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2396mil|Location2.Y=2437.99mil|Absolute=True">Text "LED6" (1610mil,2402mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2379.677mil|Location2.Y=2454.606mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2379.677mil|Location2.Y=2454.606mil|Absolute=True">Pad LED6-1(1718.15mil,2417.142mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2396mil|Location2.Y=2437.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2396mil|Location2.Y=2437.99mil|Absolute=True">Text "LED6" (1610mil,2402mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2379.677mil|Location2.Y=2454.606mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2379.677mil|Location2.Y=2454.606mil|Absolute=True">Pad LED6-2(1611.85mil,2417.142mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2568mil|Location2.Y=2609.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2568mil|Location2.Y=2609.99mil|Absolute=True">Text "LED7" (1610mil,2574mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2551.108mil|Location2.Y=2626.037mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2551.108mil|Location2.Y=2626.037mil|Absolute=True">Pad LED7-1(1718.15mil,2588.572mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2568mil|Location2.Y=2609.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2568mil|Location2.Y=2609.99mil|Absolute=True">Text "LED7" (1610mil,2574mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2551.108mil|Location2.Y=2626.037mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2551.108mil|Location2.Y=2626.037mil|Absolute=True">Pad LED7-2(1611.85mil,2588.572mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2739mil|Location2.Y=2780.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2739mil|Location2.Y=2780.99mil|Absolute=True">Text "LED8" (1610mil,2745mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2722.535mil|Location2.Y=2797.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1695.449mil|Location2.X=1740.851mil|Location1.Y=2722.535mil|Location2.Y=2797.465mil|Absolute=True">Pad LED8-1(1718.15mil,2760mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2739mil|Location2.Y=2780.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1604mil|Location2.X=1725.964mil|Location1.Y=2739mil|Location2.Y=2780.99mil|Absolute=True">Text "LED8" (1610mil,2745mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2722.535mil|Location2.Y=2797.465mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1589.149mil|Location2.X=1634.551mil|Location1.Y=2722.535mil|Location2.Y=2797.465mil|Absolute=True">Pad LED8-2(1611.85mil,2760mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1703mil|Location2.Y=1744.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1703mil|Location2.Y=1744.99mil|Absolute=True">Text "R2" (1860mil,1709mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=1686.09mil|Location2.Y=1761.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=1686.09mil|Location2.Y=1761.019mil|Absolute=True">Pad R2-1(1831.85mil,1723.554mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1703mil|Location2.Y=1744.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1703mil|Location2.Y=1744.99mil|Absolute=True">Text "R2" (1860mil,1709mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=1686.09mil|Location2.Y=1761.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=1686.09mil|Location2.Y=1761.019mil|Absolute=True">Pad R2-2(1938.15mil,1723.554mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1874mil|Location2.Y=1915.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1874mil|Location2.Y=1915.99mil|Absolute=True">Text "R3" (1860mil,1880mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=1857.518mil|Location2.Y=1932.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=1857.518mil|Location2.Y=1932.447mil|Absolute=True">Pad R3-1(1831.85mil,1894.983mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1874mil|Location2.Y=1915.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=1874mil|Location2.Y=1915.99mil|Absolute=True">Text "R3" (1860mil,1880mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=1857.518mil|Location2.Y=1932.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=1857.518mil|Location2.Y=1932.447mil|Absolute=True">Pad R3-2(1938.15mil,1894.983mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2045mil|Location2.Y=2086.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2045mil|Location2.Y=2086.99mil|Absolute=True">Text "R4" (1860mil,2051mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2028.947mil|Location2.Y=2103.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2028.947mil|Location2.Y=2103.876mil|Absolute=True">Pad R4-1(1831.85mil,2066.411mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2045mil|Location2.Y=2086.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2045mil|Location2.Y=2086.99mil|Absolute=True">Text "R4" (1860mil,2051mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2028.947mil|Location2.Y=2103.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2028.947mil|Location2.Y=2103.876mil|Absolute=True">Pad R4-2(1938.15mil,2066.411mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2233mil|Location2.Y=2274.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2233mil|Location2.Y=2274.99mil|Absolute=True">Text "R5" (1860mil,2239mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2216.123mil|Location2.Y=2291.052mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2216.123mil|Location2.Y=2291.052mil|Absolute=True">Pad R5-1(1831.85mil,2253.588mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2233mil|Location2.Y=2274.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2233mil|Location2.Y=2274.99mil|Absolute=True">Text "R5" (1860mil,2239mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2216.123mil|Location2.Y=2291.052mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2216.123mil|Location2.Y=2291.052mil|Absolute=True">Pad R5-2(1938.15mil,2253.588mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2404mil|Location2.Y=2445.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2404mil|Location2.Y=2445.99mil|Absolute=True">Text "R6" (1860mil,2410mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2387.552mil|Location2.Y=2462.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2387.552mil|Location2.Y=2462.481mil|Absolute=True">Pad R6-1(1831.85mil,2425.016mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2404mil|Location2.Y=2445.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2404mil|Location2.Y=2445.99mil|Absolute=True">Text "R6" (1860mil,2410mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2387.552mil|Location2.Y=2462.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2387.552mil|Location2.Y=2462.481mil|Absolute=True">Pad R6-2(1938.15mil,2425.016mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2575mil|Location2.Y=2616.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2575mil|Location2.Y=2616.99mil|Absolute=True">Text "R7" (1860mil,2581mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2558.98mil|Location2.Y=2633.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1809.149mil|Location2.X=1854.551mil|Location1.Y=2558.98mil|Location2.Y=2633.909mil|Absolute=True">Pad R7-1(1831.85mil,2596.445mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2575mil|Location2.Y=2616.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854mil|Location2.X=1915.984mil|Location1.Y=2575mil|Location2.Y=2616.99mil|Absolute=True">Text "R7" (1860mil,2581mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2558.98mil|Location2.Y=2633.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\LED Breakout Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1915.449mil|Location2.X=1960.851mil|Location1.Y=2558.98mil|Location2.Y=2633.909mil|Absolute=True">Pad R7-2(1938.15mil,2596.445mil)  Top Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>

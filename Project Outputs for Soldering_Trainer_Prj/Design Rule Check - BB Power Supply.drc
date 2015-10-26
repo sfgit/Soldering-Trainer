@@ -1,0 +1,72 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc
+Date     : 10/23/2015
+Time     : 10:09:04 AM
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=7mil) (Max=25mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+   Violation between Hole Size Constraint (125.984mil > 100mil) : Pad J5-MH1(3068.7mil,1435.67mil)  Multi-Layer
+   Violation between Hole Size Constraint (125.984mil > 100mil) : Pad J5-MH2(2781.3mil,1435.67mil)  Multi-Layer
+Rule Violations :2
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+   Violation between Pad J5-2(2893.504mil,1530.158mil)  Top Layer and 
+                     Pad J5-3(2925mil,1530.158mil)  Top Layer
+   Violation between Pad J5-4(2956.496mil,1530.158mil)  Top Layer and 
+                     Pad J5-3(2925mil,1530.158mil)  Top Layer
+   Violation between Pad J5-5(2987.992mil,1530.158mil)  Top Layer and 
+                     Pad J5-4(2956.496mil,1530.158mil)  Top Layer
+   Violation between Pad J5-1(2862.008mil,1530.158mil)  Top Layer and 
+                     Pad J5-2(2893.504mil,1530.158mil)  Top Layer
+Rule Violations :4
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Violation between Text "J5" (3131mil,1403mil)  Top Overlay and 
+                     Pad J5-MH1(3068.7mil,1435.67mil)  Multi-Layer
+   Violation between Text "J2" (3045mil,1814mil)  Top Overlay and 
+                     Pad J2-2(3070.012mil,1829.064mil)  Multi-Layer
+Rule Violations :2
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+   Violation between Text "PWR3" (4077mil,2100mil)  Top Overlay and 
+                     Track (4074.11mil,2143.819mil)(4074.11mil,2148.59mil)  Top Overlay
+   Violation between Text "PWR3" (4077mil,2100mil)  Top Overlay and 
+                     Track (4082.756mil,2143.819mil)(4092.598mil,2143.819mil)  Top Overlay
+   Violation between Text "PWR3" (4077mil,2100mil)  Top Overlay and 
+                     Track (4141.811mil,2143.819mil)(4151.654mil,2143.819mil)  Top Overlay
+   Violation between Text "PWR3" (4077mil,2100mil)  Top Overlay and 
+                     Track (4122.126mil,2143.819mil)(4131.968mil,2143.819mil)  Top Overlay
+   Violation between Text "PWR3" (4077mil,2100mil)  Top Overlay and 
+                     Track (4102.441mil,2143.819mil)(4112.283mil,2143.819mil)  Top Overlay
+   Violation between Text "PWR3" (4077mil,2100mil)  Top Overlay and 
+                     Track (4181.181mil,2143.819mil)(4191.024mil,2143.819mil)  Top Overlay
+   Violation between Text "PWR3" (4077mil,2100mil)  Top Overlay and 
+                     Track (4161.496mil,2143.819mil)(4171.339mil,2143.819mil)  Top Overlay
+Rule Violations :7
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 15
+Time Elapsed        : 00:00:01

@@ -1,0 +1,406 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body {
+			font-family : verdana;
+		}
+		td, th {
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;
+		}
+		th {
+			background-color : #A6CAF0;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+		}
+		
+		.DRC_summary_header {							
+			padding-bottom : 0.1em;
+			border : 0px solid black;							
+			width: 100%;
+                        align: right;
+                        
+		}
+
+		.DRC_summary_header_col1, 
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3
+		{
+			color : black;
+			font-size:150%;
+                        padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2: 0em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top;
+			font-weight: bold;				
+		}
+		
+		.DRC_summary_header_col1 	
+		{		                       
+			text-align: right;
+                        width: auto;	
+		}
+
+		.DRC_summary_header_col2 	
+		{		
+			text-align: center;	
+		}
+
+		.DRC_summary_header_col3 	
+		{		
+			text-align: left;	
+		}
+
+
+		
+		.header_holder
+		{
+		Width = 100%;
+		border = 0px solid green;
+		padding = 0;
+		}
+		
+		
+		
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+			left:0;
+			top:0;
+			padding-top : 0.1em;			
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top
+
+		}
+		.front_matter {	
+			
+			margin-top: 5px;
+ 			margin-left: 0px;					 			
+ 			horizontal-align: left;
+		}
+				
+		
+		.front_matter_column1 {
+			width : 10em;	
+			text-align  : right;
+			padding-right:0.1em;
+			
+		}
+		
+		.front_matter_column2 {
+                        width: 0.1em;
+			align: center;
+			text-align : center;
+			margin-right  : 0.1em;	
+			margin-left   : 0.1em;
+		}
+		.front_matter_column3 {
+			width         : auto;  
+			text-align    : left;	
+			margin-right  : 0.5em;				
+		}
+		
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD13\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td Style="width:70%">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">10/23/2015</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">10:09:04 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc" class="file"><acronym title="C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc">C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td Style="Width:30%">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3" style="color : red">15</td></tr>
+</table>
+</td>
+</table>
+<hr><a name="IDD02PWPZ4QH0NIDXRK20T1SZKEEXAIZ1CRRBDTCMRZ0ZKCFXHISNE"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDK2LFE3LHONULF1CSLMFBTUADRCXL1MDQ2SQQEGIH5NMQB2V25S1M">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUQEGGPCMEAWOK4PS5Z4C2GG5IGMUXS44XR2WHZPFYTFYVHSRXJOE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIJPPUUOJXWA1M4SRZLOAKG4KPDUEXH5KTRSLJLMONQMC4OI3YKHB">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1HLDKE15MWRZECRJ3CVLL3TSIM1G2VNTIDPYIYDKWP2DQ5AH2L2F">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYD4KPNMAEVE3H0ALCIW2HV03WKLTGU0TKM1AG4NTOOS0UDN2XR3J">Width Constraint (Min=7mil) (Max=25mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYVTOTXOREJX0QJG5RWOZH15VJZHBQ4VOV2QXQICECXS1HIKDJVP">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTSYW5WATBD2GMKB2GDUQX5A54IEE1MAHB0XBTQF33RGWRWPUTK5I">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDBM4EP0GOI4PK0NSIMHIK33EYDLXXFS4NO4YHRPYZ4FF2NDLWNEI">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOF2BKBOTHBRZDUHI11P3CME2PL1RGZA2AFKKBWKLGOTBTCX0APGI">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMVC0KHSAFT02B023L2P52NHDJENYL2X3AVAEW5OABWBZ2AJNB0KH">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOWGSELOTNCTBHCETM3Y0AV5YSH4PC4FCDF3SCPJTCCTADABRK1WN">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1NPZ3IDXOKCQKVSBCJC4XADJNKSRJQFTCLV0V4PTPQXUELIH1JOG">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">15</td>
+</tr>
+</table><br><hr><a name="IDTSYW5WATBD2GMKB2GDUQX5A54IEE1MAHB0XBTQF33RGWRWPUTK5I"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3005.083mil|Location2.X=3132.317mil|Location1.Y=1372.053mil|Location2.Y=1499.287mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3005.083mil|Location2.X=3132.317mil|Location1.Y=1372.053mil|Location2.Y=1499.287mil|Absolute=True">Hole Size Constraint (125.984mil &gt; 100mil) : Pad J5-MH1(3068.7mil,1435.67mil)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2717.683mil|Location2.X=2844.917mil|Location1.Y=1372.053mil|Location2.Y=1499.287mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2717.683mil|Location2.X=2844.917mil|Location1.Y=1372.053mil|Location2.Y=1499.287mil|Absolute=True">Hole Size Constraint (125.984mil &gt; 100mil) : Pad J5-MH2(2781.3mil,1435.67mil)  Multi-Layer</acronym></a><br></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDOF2BKBOTHBRZDUHI11P3CME2PL1RGZA2AFKKBWKLGOTBTCX0APGI"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2879.662mil|Location2.X=2907.347mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2879.662mil|Location2.X=2907.347mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True">Pad J5-2(2893.504mil,1530.158mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2911.157mil|Location2.X=2938.843mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2911.157mil|Location2.X=2938.843mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True">Pad J5-3(2925mil,1530.158mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2942.653mil|Location2.X=2970.338mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2942.653mil|Location2.X=2970.338mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True">Pad J5-4(2956.496mil,1530.158mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2911.157mil|Location2.X=2938.843mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2911.157mil|Location2.X=2938.843mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True">Pad J5-3(2925mil,1530.158mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2974.149mil|Location2.X=3001.834mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2974.149mil|Location2.X=3001.834mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True">Pad J5-5(2987.992mil,1530.158mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2942.653mil|Location2.X=2970.338mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2942.653mil|Location2.X=2970.338mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True">Pad J5-4(2956.496mil,1530.158mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2848.166mil|Location2.X=2875.851mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2848.166mil|Location2.X=2875.851mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True">Pad J5-1(2862.008mil,1530.158mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2879.662mil|Location2.X=2907.347mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2879.662mil|Location2.X=2907.347mil|Location1.Y=1498.599mil|Location2.Y=1561.717mil|Absolute=True">Pad J5-2(2893.504mil,1530.158mil)  Top Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDMVC0KHSAFT02B023L2P52NHDJENYL2X3AVAEW5OABWBZ2AJNB0KH"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125mil|Location2.X=3186.984mil|Location1.Y=1397mil|Location2.Y=1438.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125mil|Location2.X=3186.984mil|Location1.Y=1397mil|Location2.Y=1438.99mil|Absolute=True">Text "J5" (3131mil,1403mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2993.834mil|Location2.X=3143.566mil|Location1.Y=1360.804mil|Location2.Y=1510.536mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2993.834mil|Location2.X=3143.566mil|Location1.Y=1360.804mil|Location2.Y=1510.536mil|Absolute=True">Pad J5-MH1(3068.7mil,1435.67mil)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3039mil|Location2.X=3100.984mil|Location1.Y=1808mil|Location2.Y=1849.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3039mil|Location2.X=3100.984mil|Location1.Y=1808mil|Location2.Y=1849.99mil|Absolute=True">Text "J2" (3045mil,1814mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3036.485mil|Location2.X=3103.539mil|Location1.Y=1795.536mil|Location2.Y=1862.591mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3036.485mil|Location2.X=3103.539mil|Location1.Y=1795.536mil|Location2.Y=1862.591mil|Absolute=True">Pad J2-2(3070.012mil,1829.064mil)  Multi-Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDOWGSELOTNCTBHCETM3Y0AV5YSH4PC4FCDF3SCPJTCCTADABRK1WN"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True">Text "PWR3" (4077mil,2100mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071.61mil|Location2.X=4076.61mil|Location1.Y=2141.319mil|Location2.Y=2151.09mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071.61mil|Location2.X=4076.61mil|Location1.Y=2141.319mil|Location2.Y=2151.09mil|Absolute=True">Track (4074.11mil,2143.819mil)(4074.11mil,2148.59mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True">Text "PWR3" (4077mil,2100mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4080.256mil|Location2.X=4095.098mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4080.256mil|Location2.X=4095.098mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True">Track (4082.756mil,2143.819mil)(4092.598mil,2143.819mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True">Text "PWR3" (4077mil,2100mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4139.311mil|Location2.X=4154.154mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4139.311mil|Location2.X=4154.154mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True">Track (4141.811mil,2143.819mil)(4151.654mil,2143.819mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True">Text "PWR3" (4077mil,2100mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4119.626mil|Location2.X=4134.468mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4119.626mil|Location2.X=4134.468mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True">Track (4122.126mil,2143.819mil)(4131.968mil,2143.819mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True">Text "PWR3" (4077mil,2100mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4099.941mil|Location2.X=4114.783mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4099.941mil|Location2.X=4114.783mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True">Track (4102.441mil,2143.819mil)(4112.283mil,2143.819mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True">Text "PWR3" (4077mil,2100mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4178.681mil|Location2.X=4193.524mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4178.681mil|Location2.X=4193.524mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True">Track (4181.181mil,2143.819mil)(4191.024mil,2143.819mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4071mil|Location2.X=4192.964mil|Location1.Y=2094mil|Location2.Y=2135.99mil|Absolute=True">Text "PWR3" (4077mil,2100mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4158.996mil|Location2.X=4173.839mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mattb_000\Documents\GitHub\Soldering-Trainer\BB Power Supply.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4158.996mil|Location2.X=4173.839mil|Location1.Y=2141.319mil|Location2.Y=2146.319mil|Absolute=True">Track (4161.496mil,2143.819mil)(4171.339mil,2143.819mil)  Top Overlay</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>
