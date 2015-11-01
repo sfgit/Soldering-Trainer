@@ -29,7 +29,7 @@ PowerPortNamesTakePriority=0
 PushECOToAnnotationFile=1
 DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
-OutputPath=Project Outputs for Level_Translation_Prj
+OutputPath=
 
 [Document1]
 DocumentPath=TSOP65P620X120-24N.PcbLib
@@ -256,146 +256,138 @@ DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate
 DItemRevisionGUID=
 
 [GeneratedDocument37]
-DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.GM13
-DItemRevisionGUID=
-
-[GeneratedDocument38]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.GM13
 DItemRevisionGUID=
 
-[GeneratedDocument39]
-DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.GM15
-DItemRevisionGUID=
-
-[GeneratedDocument40]
+[GeneratedDocument38]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.GM15
 DItemRevisionGUID=
 
-[GeneratedDocument41]
+[GeneratedDocument39]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.GPB
 DItemRevisionGUID=
 
-[GeneratedDocument42]
+[GeneratedDocument40]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.GPB
 DItemRevisionGUID=
 
-[GeneratedDocument43]
+[GeneratedDocument41]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.GPT
 DItemRevisionGUID=
 
-[GeneratedDocument44]
+[GeneratedDocument42]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.GPT
 DItemRevisionGUID=
 
-[GeneratedDocument45]
+[GeneratedDocument43]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument46]
+[GeneratedDocument44]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument47]
+[GeneratedDocument45]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument48]
+[GeneratedDocument46]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument49]
+[GeneratedDocument47]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.GTP
 DItemRevisionGUID=
 
-[GeneratedDocument50]
+[GeneratedDocument48]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.GTP
 DItemRevisionGUID=
 
-[GeneratedDocument51]
+[GeneratedDocument49]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument52]
+[GeneratedDocument50]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument53]
+[GeneratedDocument51]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\NC Drill\Level_Translation.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument54]
+[GeneratedDocument52]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\NC Drill\Level_Translation.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument55]
+[GeneratedDocument53]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.REP
 DItemRevisionGUID=
 
-[GeneratedDocument56]
+[GeneratedDocument54]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\ODB\Level_Translation.REP
 DItemRevisionGUID=
 
-[GeneratedDocument57]
+[GeneratedDocument55]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.REP
 DItemRevisionGUID=
 
-[GeneratedDocument58]
+[GeneratedDocument56]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\ODB\Level_Translation.REP
 DItemRevisionGUID=
 
-[GeneratedDocument59]
+[GeneratedDocument57]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\Gerber\Level_Translation.RUL
 DItemRevisionGUID=
 
-[GeneratedDocument60]
+[GeneratedDocument58]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\Gerber\Level_Translation.RUL
 DItemRevisionGUID=
 
-[GeneratedDocument61]
+[GeneratedDocument59]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\NC Drill\Level_Translation.TXT
 DItemRevisionGUID=
 
-[GeneratedDocument62]
+[GeneratedDocument60]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\NC Drill\Level_Translation.TXT
 DItemRevisionGUID=
 
-[GeneratedDocument63]
+[GeneratedDocument61]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\ODB\odb\matrix\matrix
 DItemRevisionGUID=
 
-[GeneratedDocument64]
+[GeneratedDocument62]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\ODB\odb\matrix\matrix
 DItemRevisionGUID=
 
-[GeneratedDocument65]
+[GeneratedDocument63]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\ODB\odb\steps\pcb\netlists\cadnet\netlist
 DItemRevisionGUID=
 
-[GeneratedDocument66]
+[GeneratedDocument64]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\ODB\odb\steps\pcb\netlists\cadnet\netlist
 DItemRevisionGUID=
 
-[GeneratedDocument67]
+[GeneratedDocument65]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\ODB\odb\steps\pcb\profile
 DItemRevisionGUID=
 
-[GeneratedDocument68]
+[GeneratedDocument66]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\ODB\odb\steps\pcb\profile
 DItemRevisionGUID=
 
-[GeneratedDocument69]
+[GeneratedDocument67]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\ODB\odb\steps\pcb\stephdr
 DItemRevisionGUID=
 
-[GeneratedDocument70]
+[GeneratedDocument68]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\ODB\odb\steps\pcb\stephdr
 DItemRevisionGUID=
 
-[GeneratedDocument71]
+[GeneratedDocument69]
 DocumentPath=Project Outputs for Level_Translation_Prj\Generate Files\ODB\odb\steps\pcb\layers\drill\tools
 DItemRevisionGUID=
 
-[GeneratedDocument72]
+[GeneratedDocument70]
 DocumentPath=Project Outputs for Level_Translation_Prj\Outputs - Level Translate\ODB\odb\steps\pcb\layers\drill\tools
 DItemRevisionGUID=
 
@@ -410,7 +402,7 @@ GenerateBOM=1
 OutputJobsCount=0
 
 [Generic_EDE]
-OutputDir=Project Outputs for Level_Translation_Prj
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
